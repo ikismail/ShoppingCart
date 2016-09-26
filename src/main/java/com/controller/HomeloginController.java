@@ -7,23 +7,23 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeloginController {
 
-	@RequestMapping({"/index","/index1" })
-	public String sayIndex(){
-		return"index1";
+	@RequestMapping({ "/index", "/index1" })
+	public String sayIndex() {
+		return "index1";
 	}
-	
+
 	@RequestMapping("/hello")
-	public ModelAndView sayHello(){
-		return new ModelAndView("hello","hello","Hello Mr.Ismail");
+	public ModelAndView sayHello() {
+		return new ModelAndView("hello", "hello", "Hello Mr.Ismail");
 	}
-	
+
 	@RequestMapping("/login")
-	public String saylogin(){
+	public String saylogin() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/register")
-	public String sayRegister(){
+	public String sayRegister() {
 		return "register";
 	}
 }

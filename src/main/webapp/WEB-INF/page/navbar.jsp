@@ -5,17 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
-  <script src="<c:url value="/resource/js/jquery.js"/>"></script>
-  <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
-  <link rel="stylesheet" type="text/css" href="<c:url value="/resource/css/frontpage.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
+<script src="<c:url value="/resource/js/jquery.js"/>"></script>
+<script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/resource/css/frontpage.css"/>">
 </head>
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
 
     <div class="nav navbar">
-         <img class="navbar-brand" src="<c:url value="images/shopieasy-logo.png"/>" href="<c:url value="/index"/>" width="200px" height="100px"></img>
+         <img class="navbar-brand" src="<c:url value="/resource/images/shopieasy-logo.png"/>" href="<c:url value="/index"/>" width="200px" height="100px" alt="logo-image"></img>
       <div class="col-xs-6 ">
         <label for="ex2"></label>
         <input class="form-control" id="ex3" type="text" placeholder="Search...">
