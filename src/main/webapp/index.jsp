@@ -8,8 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <%@ include file="WEB-INF/page/navbar.jsp"%> 
- <%@ include file="WEB-INF/page/slider.jsp"%> 
- <%@ include file="WEB-INF/page/footer.jsp"%> 
+Hello World!
+ <button><a href="<c:url value="/hello" />" >Click Here</a></button> 
 </body>
 </html>
