@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
- <%@ include file="WEB-INF/page/navbar.jsp"%> 
- <%@ include file="WEB-INF/page/slider.jsp"%> 
- <%@ include file="WEB-INF/page/footer.jsp"%> 
+ <%@ include file="navbar.jsp"%> 
+ <%@ include file="slider.jsp"%> 
+ <%@ include file="footer.jsp"%> 
 </body>
 </html>
