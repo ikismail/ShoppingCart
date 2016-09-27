@@ -26,4 +26,8 @@ public class HomeloginController {
 	public String sayRegister() {
 		return "register";
 	}
+	@RequestMapping("/aboutus")
+	public String sayAbout() {
+		return "aboutUs";
+	}
 }
