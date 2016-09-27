@@ -1,0 +1,30 @@
+.navbar-brand{
+	padding:0px 15px;
+	font-size: 40px;
+}
+body{
+	font-size: 19px;
+	line-height: 0.75;
+}
+.btn{
+	padding:8px 13px;
+	margin-bottom: 0;
+	margin-top: 13px;
+}
+.container-fluid{
+	padding-right: 23px;
+}
+.navbar{
+	min-height: 49px;
+	margin-bottom: 7px;
+}
+.col-xs-6{
+	margin-top:8px;
+}
+
+/* Slider */
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+	line-height: 1;
+	height: 292px;
+	width: 1353px;
+}
