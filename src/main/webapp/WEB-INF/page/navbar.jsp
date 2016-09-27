@@ -10,7 +10,7 @@
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resource/css/frontpage.css"/>">
+	href="<c:url value="/resource/css/overallstyle.css"/>">
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -34,7 +34,7 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="<c:url value="/index1" />">Home</a></li>
-	  <li><a href="#">About Us</a></li>
+	  <li><a href="<c:url value="/aboutus"/>">About Us</a></li>
       <li><a href="#">Product List</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">

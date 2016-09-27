@@ -8,7 +8,7 @@
  <link rel="stylesheet" href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
   <script src="<c:url value="/resource/js/jquery.js"/>"></script>
   <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
-  <link rel="stylesheet" type="text/css" href="<c:url value="/resource/css/frontpage.css"/>">
+  <link rel="stylesheet" type="text/css" href="<c:url value="/resource/css/overallstyle.css"/>">
 </head>
 <body>
 <footer class="footer-distributed">
@@ -23,7 +23,7 @@
 				<p class="footer-links">
 					<a href="<c:url value="/index1"/>">Home</a>
 					·
-					<a href="#">About Us</a>
+					<a href="<c:url value="/aboutus"/>">About Us</a>
 					·
 					<a href="#">Pricing</a>
 					·
