@@ -10,7 +10,7 @@
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resource/css/frontpage.css"/>">
+	href="<c:url value="/resource/css/overall.css"/>">
 </head>
 <body>
 	<!-- Slider -->

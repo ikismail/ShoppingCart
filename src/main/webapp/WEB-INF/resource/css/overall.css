@@ -1,6 +1,41 @@
 
-/* Navigation Bar */
+/* Slider */
+.carousel-inner>.item>a>img, .carousel-inner>.item>img{
+	line-height: 1;
+	height: 292px;
+	width: 1353px;
+}
+.container{
+	margin-top: -20px;
+}
+.container{
+	width:1350px;
+}
+.jumbotron{
+	background-color: rgba(123,113,148,1);
+}
 
+/* For AboutUs Section */
+  .bg-1 {
+      background-color: #5bc0de; /* Green */
+      color: #211935;
+  }
+  .bg-2 {
+      background-color: rgb(123,113,148); /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #fff; /* White */
+      color: #555555;
+  }
+@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{
+	float:left;
+	margin-top:20px;
+}
+
+
+/* Navigation bar */
+@CHARSET "ISO-8859-1";
 .col-xs-6{
 	margin-top:11px;	
 }
@@ -30,25 +65,10 @@ body{
 	background-color:#211935;
 	border-color:#211935;
 }
-/* Slider */
-.carousel-inner>.item>a>img, .carousel-inner>.item>img{
-	line-height: 1;
-	height: 292px;
-	width: 1353px;
-}
-.container{
-	margin-top: -20px;
-}
-.container{
-	width:1350px;
-}
-.jumbotron{
-	background-color: rgba(123,113,148,1);
-}
 
 /* Footer */
 .footer-distributed{
-	background-color: #211935;
+	background-color: #292c2f;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -120,20 +140,3 @@ body{
 		line-height: 1.8;
 	}
 }
-
-/* For AboutUs Section */
-  .bg-1 {
-      background-color: #5bc0de; /* Green */
-      color: #211935;
-  }
-  .bg-2 {
-      background-color: rgb(123,113,148); /* Dark Blue */
-      color: #ffffff;
-  }
-  .bg-3 {
-      background-color: #fff; /* White */
-      color: #555555;
-  }
-@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{
-	float:left;
-	margin-top:20px;
