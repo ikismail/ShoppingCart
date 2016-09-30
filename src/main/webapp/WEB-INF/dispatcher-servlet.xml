@@ -8,11 +8,23 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd 
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<mvc:annotation-driven />
+	<mvc:annotation-driven></mvc:annotation-driven>
 
-	<context:component-scan base-package="com.controller"></context:component-scan>
+	<context:component-scan base-package="com."></context:component-scan>
+
+	<!-- it will scan all the class under the package com.tutorial create instances 
+		for all the -->
+	<!-- class which has an annotations like @Component, @Controller, @Service, 
+		@Repository -->
+
+
+
+	<!-- Using this it get the actual view name by converting logical view name -->
+	<!-- for eg: logical view name is welcome -->
+	<!-- it will convert it to WEB-INF/Views/welcome.jsp -->
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -21,5 +33,4 @@
 	</bean>
 
 	<mvc:resources mapping="/resource/**" location="/WEB-INF/resource/" />
-
 </beans>

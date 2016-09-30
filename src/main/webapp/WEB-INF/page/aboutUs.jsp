@@ -11,7 +11,7 @@
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resource/css/overallstyle.css"/>">
+	href="<c:url value="/resource/css/overall.css"/>">
 </head>
 </head>
 <body>
@@ -33,14 +33,15 @@
 
 		<div class="container-fluid bg-2 text-center">
 			<h3>What Am I?</h3>
-			<p>ShopIeasy's vision is to create India's most reliable and
+			<div id="para"><p>ShopIeasy's vision is to create India's most reliable and
 				frictionless commerce ecosystem that creates life-changing
 				experiences for buyers and sellers.</p>
-			<p>We have always taken pride in our culture. There are some core
+			</div>
+			<div id="para"><p>We have always taken pride in our culture. There are some core
 				values that have been inherent and are an integral part of our
 				success story. These values are a pure reflection of what is
 				important to us as a Team and Business..</p>
-		</div>
+		</div></div>
 	</div>
 	
 <!-- 	importing footer  -->
