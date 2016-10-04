@@ -11,16 +11,26 @@
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/resource/css/overall.css"/>">
+	href="<c:url value="/resource/css/aboutus.css"/>">
+
+<style type="text/css">
+#aboutus{
+	margin-top: 27px;
+	margin-right:30px;
+	margin-left:30px;
+	margin-bottom:-64px;
+}
+
+</style>
 </head>
-</head>
+
 <body>
 
 <!-- importing navigation bar -->
 <%@ include file="navbar.jsp"%>
 
 <!-- Content -->
-	<div class="row">
+	<div class="row" id="aboutus">
 		<div class="col-sm-4">
 			<div class="container-fluid bg-1 text-center">
 				<h3>Who Am I?</h3>

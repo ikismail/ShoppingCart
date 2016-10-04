@@ -14,6 +14,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ProductDao productDao;
+	private Product product1;
 
 	public ProductDao getProductDao() {
 		return productDao;
@@ -22,10 +23,20 @@ public class ProductServiceImpl implements ProductService {
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
-	
+
 	@Transactional
 	public List<Product> getAllProducts() {
 		return productDao.getAllProducts();
+	}
+
+	
+	public Product getProductById(String productId) {
+		return productDao.getProductById(productId);
+	}
+
+	
+	public void deleteProduct(String productId) {
+		productDao.deleteProduct(productId);
 	}
 
 }

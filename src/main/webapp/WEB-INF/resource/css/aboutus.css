@@ -1,0 +1,24 @@
+/* For AboutUs Section */
+  .bg-1 {
+      background-color: #5bc0de; /* Green */
+      color: #211935;
+  }
+  .bg-2 {
+      background-color: rgb(123,113,148); /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #fff; /* White */
+      color: #555555;
+  }
+@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{
+	float:left;
+	margin-top:20px;
+}
+
+@media(min-width:768px)
+.col-sm-4{
+	margin:0px;
+	width:33.33333%;
+	
+}
