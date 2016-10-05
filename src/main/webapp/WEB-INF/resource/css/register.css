@@ -1,10 +1,7 @@
 @import "font-awesome.min.css";
 @import "font-awesome-ie7.min.css";
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+
 
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
