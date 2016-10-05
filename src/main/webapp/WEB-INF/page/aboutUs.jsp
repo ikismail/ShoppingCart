@@ -15,14 +15,10 @@
 
 <style type="text/css">
 #aboutus{
-	margin-top: 3px;
+	margin-top: 27px;
 	margin-right:30px;
 	margin-left:30px;
-	margin-bottom:30px;
-}
-
-#image{
-	margin-top:2px;
+	margin-bottom:-64px;
 }
 
 </style>
@@ -35,7 +31,7 @@
 
 <!-- Content -->
 	<div class="row" id="aboutus">
-		<div class="col-sm-4" id="image">
+		<div class="col-sm-4">
 			<div class="container-fluid bg-1 text-center">
 				<h3>Who Am I?</h3>
 				<img src="<c:url value="/resource/images/aboutImage.png"/>" class="img-circle" alt="AboutUs" width="350"

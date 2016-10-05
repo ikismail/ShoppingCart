@@ -40,7 +40,7 @@
 			<li><a href=" <c:url value="/index1" />">Home</a></li>
 			<li><a href=" <c:url value="/aboutus" />">About Us</a></li>
 			<li><a href=" <c:url value="/getAllProducts" />">Product List</a></li>
-			<li><a href=" <c:url value="/admin/product/addProduct" />">Add Product</a></li>
+			<li><a href=" <c:url value="#" />">Add Product</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="#"><span

@@ -38,18 +38,14 @@
 			<tbody>
 				<c:forEach items="${products}" var="prod">
 				<tr>
-				<td>${prod.productId}</td>
+				<td><a href="getProductById/${prod.productId}">${prod.productId}</a></td>
 				<td>${prod.productCategory}</td>
 				<td>${prod.productName}</td>
 				<td>${prod.productPrice}</td>
 				<td>${prod.unitStock}</td>
 				<td>${prod.productDescription}</td>
 				<td>${prod.productManufacturer}</td>
-				<td>
-				<a href="getProductById/${prod.productId}"><span class="glyphicon glyphicon-info"></span></a>
-				<a href="admin/product/editProduct/${prod.productId}"><span class="glyphicon glyphicon-info"></span></a>
-				<a href="admin/delete/${prod.productId}"><span class="glyphicon glyphicon-trash"></span></a>
-				</td>
+				<td><a href="delete/{prod.productId}"><span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
 				</c:forEach>
 			</tbody>

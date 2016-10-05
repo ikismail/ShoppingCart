@@ -5,36 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="item")
+@Table(name = "product")
 public class Product {
 
 	@Id
-	@Column(name="Id")
+	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String productId;
-	@Column(name="Description")
+	@Column
+	private String productCategory;
+	@Column
 	private String productDescription;
-	@Column(name="Manufacturer")
+	@Column
 	private String productManufacturer;
-	@Column(name="Name")
-	@NotEmpty(message="Name is mandatory")
+	@Column
 	private String productName;
-	@Column(name="Price")
-	@Min(value=100, message="Minimum value should be greater than 100")
+	@Column
 	private double productPrice;
-	@Column(name="Unit")
+	@Column(name="stockunit")
 	private String unitStock;
-	@ManyToOne
-	@JoinColumn(name="Category")
-	private Categories category;
 
 //	Getters and Setter
 	
@@ -42,11 +34,11 @@ public class Product {
 		return productId;
 	}
 
-	public Categories getCategory() {
-		return category;
+	public String getProductCategory() {
+		return productCategory;
 	}
 
-	public String getDescription() {
+	public String getProductDescription() {
 		return productDescription;
 	}
 
@@ -70,8 +62,8 @@ public class Product {
 		this.productId = productId;
 	}
 
-	public void setProductCategory(Categories category) {
-		this.category = category;
+	public void setProductCategory(String productCategory) {
+		this.productCategory = productCategory;
 	}
 
 	public void setProductDescription(String productDescription) {
@@ -95,11 +87,11 @@ public class Product {
 	}
 
 	//Constructors
-	public Product(String productId, Categories productCategory, String productDescription, String productManufacturer,
+	public Product(String productId, String productCategory, String productDescription, String productManufacturer,
 			String productName, double productPrice, String unitStock) {
 		super();
 		this.productId = productId;
-		this.category = productCategory;
+		this.productCategory = productCategory;
 		this.productDescription = productDescription;
 		this.productManufacturer = productManufacturer;
 		this.productName = productName;

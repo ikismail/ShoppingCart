@@ -5,7 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/security 
-       http://www.springframework.org/schema/security/spring-security.xsd ">
+       http://www.springframework.org/schema/security/spring-security.xsd 
+       http://www.springframework.org/schema/webflow-config 
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
 
 	<!-- databse properties DataSource -->
 	<bean id="dataSource"
@@ -40,8 +42,7 @@
 		<!-- for Entity Classes annotated Classes package -->
 		<property name="packagesToScan">
 			<list>
-				<value>com.model.Product</value>
-				<value>com.model.Categories</value>
+				<value>com.model</value>
 			</list>
 		</property>
 	</bean>

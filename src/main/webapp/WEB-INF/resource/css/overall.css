@@ -7,15 +7,12 @@
 }
 .container{
 	margin-top: -20px;
-	margin-bottom:12px;
 }
 .container{
 	width:1335px;
 }
 .jumbotron{
 	background-color: rgb(210, 206, 219);
-	padding-top:30px;
-	padding-bottom:30px;
 }
 
 
@@ -56,8 +53,8 @@
 	text-align: left;
 	font: normal 16px sans-serif;
 
-	padding: 7px 6px;
-	margin-top: -31px;
+	padding: 45px 50px;
+	margin-top: 35px;
 }
 
 .footer-distributed .footer-left p{
@@ -68,7 +65,7 @@
 
 /* Footer links */
 
-.footer-distributed div.footer-links{
+.footer-distributed p.footer-links{
 	font-size:18px;
 	font-weight: bold;
 	color:  #ffffff;
@@ -76,7 +73,7 @@
 	padding: 0;
 }
 
-.footer-distributed div.footer-links a{
+.footer-distributed p.footer-links a{
 	display:inline-block;
 	line-height: 1.8;
 	text-decoration: none;
@@ -117,7 +114,7 @@
 		margin: 0 auto 20px;
 	}
 
-	.footer-distributed .footer-left div.footer-links{
+	.footer-distributed .footer-left p.footer-links{
 		line-height: 1.8;
 	}
 }

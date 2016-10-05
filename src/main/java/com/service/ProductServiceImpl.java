@@ -14,6 +14,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ProductDao productDao;
+	private Product product1;
 
 	public ProductDao getProductDao() {
 		return productDao;
@@ -28,23 +29,14 @@ public class ProductServiceImpl implements ProductService {
 		return productDao.getAllProducts();
 	}
 
-	@Transactional
+	
 	public Product getProductById(String productId) {
 		return productDao.getProductById(productId);
 	}
 
-	@Transactional
+	
 	public void deleteProduct(String productId) {
 		productDao.deleteProduct(productId);
 	}
-	
-	@Transactional
-	public void addProduct(Product product){
-		productDao.addProduct(product);
-	}
 
-	@Transactional
-	public void editProduct(Product product){
-		productDao.editProduct(product);
-	}
 }

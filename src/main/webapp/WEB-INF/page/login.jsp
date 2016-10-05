@@ -44,8 +44,8 @@
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <div id="button">
-                                <a href="javascript:;" class="btn btn-sm btn-success" style="float:left">Login</a>
-                                <a href="<c:url value="/register"/>" class="btn btn-sm btn-success" style="float:right">Register</a>
+                                <a href="javascript:;" class="btn btn-sm btn-success">Login</a>
+                                <a href="<c:url value="/register"/>" class="btn btn-sm btn-success">Register</a>
                             	</div>
                             </fieldset>
                         </form>

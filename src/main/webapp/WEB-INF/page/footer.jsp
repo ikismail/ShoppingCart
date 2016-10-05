@@ -20,8 +20,7 @@
 	</div>
 	<div class="footer-left">
 
-				<p >
-				<div class="footer-links">
+				<p class="footer-links">
 					<a href="<c:url value="/index1"/>">Home</a>
 					·
 					<a href="<c:url value="/aboutus"/>">About Us</a>
@@ -31,15 +30,9 @@
 					<a href="#">Product List</a>
 					·
 					<a href="#">Contact Us</a>
-					
-				<p>	Created by Mohammed Ismail.A ShopIeasy &copy; 2017</p>
-					
-					</div>
-					
-					
 				</p>
 
-				
+				<p>Created by Mohammed Ismail.A ShopIeasy &copy; 2017</p>
 			</div>
 </footer>
 </body>
