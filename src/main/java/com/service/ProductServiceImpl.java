@@ -9,12 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.ProductDao;
 import com.model.Product;
 
-@Service
+@Service(value="productService")
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ProductDao productDao;
-	private Product product1;
 
 	public ProductDao getProductDao() {
 		return productDao;
@@ -37,6 +36,14 @@ public class ProductServiceImpl implements ProductService {
 	
 	public void deleteProduct(String productId) {
 		productDao.deleteProduct(productId);
+	}
+	
+	public void addProduct(Product product){
+		productDao.addProduct(product);
+	}
+	
+	public void editProduct(Product product){
+		productDao.editProduct(product);
 	}
 
 }

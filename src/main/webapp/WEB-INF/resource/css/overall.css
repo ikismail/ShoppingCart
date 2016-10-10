@@ -13,6 +13,9 @@
 }
 .jumbotron{
 	background-color: rgb(210, 206, 219);
+	margin-bottom:19px;
+	padding-top:23px;
+	padding-bottom:23px;
 }
 
 
@@ -53,8 +56,8 @@
 	text-align: left;
 	font: normal 16px sans-serif;
 
-	padding: 45px 50px;
-	margin-top: 35px;
+	padding: 2px 15px;
+	margin-top: -19px;
 }
 
 .footer-distributed .footer-left p{
@@ -69,8 +72,6 @@
 	font-size:18px;
 	font-weight: bold;
 	color:  #ffffff;
-	margin: 0 0 10px;
-	padding: 0;
 }
 
 .footer-distributed p.footer-links a{

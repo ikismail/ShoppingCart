@@ -45,6 +45,12 @@
 				<value>com.model</value>
 			</list>
 		</property>
+<!-- 		<property name="annotatedClasses"> -->
+<!-- 		<list> -->
+<!-- 			<value>com.model.Product</value> -->
+<!-- 			<value>com.model.Category</value> -->
+<!-- 		</list> -->
+<!-- 		</property> -->
 	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">

@@ -12,4 +12,8 @@ public interface ProductDao {
 
 	void deleteProduct(String productId);
 
+	void addProduct(Product product);
+	
+	void editProduct(Product product);
+	String test();
 }
