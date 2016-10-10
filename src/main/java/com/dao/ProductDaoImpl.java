@@ -6,11 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.model.Product;
 
-@Repository
+@Repository(value="productDao")
 public class ProductDaoImpl implements ProductDao {
 
 	@Autowired
@@ -26,9 +25,19 @@ public class ProductDaoImpl implements ProductDao {
 
 	public List<Product> getAllProducts() {
 		Session session = sessionFactory.openSession();
-		List<Product> products = session.createQuery("from Product").list();
+		//List<Product> products = session.createQuery("from Product").list();
+	 List<Product> products=	 session.createCriteria(Product.class).list();
+	 System.out.println(products);
 		session.close();
 		return products;
+	}
+	public String test() {
+		Session session = sessionFactory.openSession();
+		//List<Product> products = session.createQuery("from Product").list();
+	 List<Product> list=	 session.createCriteria(Product.class).list();
+	 System.out.println(list);
+		session.close();
+		return "Testing pge";
 	}
 
 	public Product getProductById(String productId) {
@@ -49,6 +58,19 @@ public class ProductDaoImpl implements ProductDao {
 		session.delete(product);
 		session.flush();
 		session.close();// close the session
+	}
+	
+	public void addProduct(Product product){
+		Session session = sessionFactory.openSession();
+		session.save(product);
+		session.close();
+	}
+	
+	public void editProduct(Product product){
+		Session session = sessionFactory.openSession();
+		session.update(product);
+		session.flush();
+		session.close();
 	}
 
 }

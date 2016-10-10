@@ -1,8 +1,11 @@
 package com.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.dao.ProductDao;
 
 @Controller
 public class HomeController {
@@ -22,7 +25,16 @@ public class HomeController {
 	
 	//Request Mapping
 	
-		@RequestMapping({ "/index", "/index1" })
+	@Autowired
+	ProductDao productDao;
+	
+	@RequestMapping("/test")
+	public String testpge(){
+		productDao.test();
+	return "Welcome";
+	}
+	
+	@RequestMapping({ "/index", "/index1" })
 		public String sayIndex() {
 			return "index1";
 		}
@@ -46,10 +58,4 @@ public class HomeController {
 			return "aboutUs";
 		}
 		
-//		@RequestMapping("/getAllProducts")
-//		public ModelAndView getAllProducts() {
-//			List<Product> products = productService.getAllProduct();
-//			return new ModelAndView("productList", "products", products);
-//		}
-//	
 }

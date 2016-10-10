@@ -6,30 +6,48 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "product")
+@Table(name = "item")
 public class Product {
 
 	@Id
-	@Column
+	@Column(name = "Id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String productId;
-	@Column
+	
+	@Column(name="category")
 	private String productCategory;
-	@Column
+	
+	@Column(name = "description")
 	private String productDescription;
-	@Column
+	
+	@Column(name = "manufacturer")
 	private String productManufacturer;
-	@Column
+	
+	@NotEmpty(message = "Product Name is mandatory")
+	@Column(name = "name")
 	private String productName;
-	@Column
+	
+	@NotNull(message="Please provide some price")
+	@Min(value = 100, message = "Minimum value should be greater than 100")
+	@Column(name = "price")
 	private double productPrice;
-	@Column(name="stockunit")
+	
+	@Column(name = "unit")
 	private String unitStock;
 
-//	Getters and Setter
-	
+	@Transient
+	private MultipartFile productImage;
+
+	// Getters and Setter
+
 	public String getProductId() {
 		return productId;
 	}
@@ -86,7 +104,15 @@ public class Product {
 		this.unitStock = unitStock;
 	}
 
-	//Constructors
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
+
+	// Constructors
 	public Product(String productId, String productCategory, String productDescription, String productManufacturer,
 			String productName, double productPrice, String unitStock) {
 		super();
@@ -98,10 +124,9 @@ public class Product {
 		this.productPrice = productPrice;
 		this.unitStock = unitStock;
 	}
-	public Product(){
-		
+
+	public Product() {
+
 	}
 
-	
-	
 }

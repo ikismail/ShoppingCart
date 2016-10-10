@@ -4,7 +4,7 @@
 <%@ page isELIgnored="false"%>
 
 <!-- 	navigation Bar -->
-<%@ include file="navbar.jsp"%> 
+<%@ include file="navbar.jsp"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,7 +19,7 @@
 	href="<c:url value="/resource/css/productList.css"/>">
 </head>
 <body>
-	<div class="container" id="productTable" style="width:829px">
+	<div class="container" id="productTable" style="width:1000px">
 		<h2>Product Management</h2>
 		<p>The List of Products in our Database</p>
 		<table class="table table-hover" id="productList">
@@ -32,21 +32,26 @@
 					<th>Stock Unit</th>
 					<th>Description</th>
 					<th>Manufacturer</th>
-					<th>Edit</th>
+					<th>View/Edit/Delete</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${products}" var="prod">
-				<tr>
-				<td><a href="getProductById/${prod.productId}">${prod.productId}</a></td>
-				<td>${prod.productCategory}</td>
-				<td>${prod.productName}</td>
-				<td>${prod.productPrice}</td>
-				<td>${prod.unitStock}</td>
-				<td>${prod.productDescription}</td>
-				<td>${prod.productManufacturer}</td>
-				<td><a href="delete/{prod.productId}"><span class="glyphicon glyphicon-trash"></span></a></td>
-				</tr>
+					<tr>
+						<td>${prod.productId}</a></td>
+						<td>${prod.productCategory}</td>
+						<td>${prod.productName}</td>
+						<td>${prod.productPrice}</td>
+						<td>${prod.unitStock}</td>
+						<td>${prod.productDescription}</td>
+						<td>${prod.productManufacturer}</td>
+						<td><a href="getProductById/${prod.productId}"> <span
+								class="glyphicon glyphicon-info-sign"></span></a> 
+								<a href="admin/product/editProduct/${prod.productId}"> <span
+								class="glyphicon glyphicon-edit"></span></a>
+						    <a href="admin/delete/${prod.productId}"> <span
+								class="glyphicon glyphicon-trash"></span></a></td>  
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

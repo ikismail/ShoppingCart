@@ -13,15 +13,6 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resource/css/aboutus.css"/>">
 
-<style type="text/css">
-#aboutus{
-	margin-top: 27px;
-	margin-right:30px;
-	margin-left:30px;
-	margin-bottom:-64px;
-}
-
-</style>
 </head>
 
 <body>
@@ -30,8 +21,8 @@
 <%@ include file="navbar.jsp"%>
 
 <!-- Content -->
-	<div class="row" id="aboutus">
-		<div class="col-sm-4">
+	<div class="row" style="margin-top:4px; margin-right:0px; margin-left:0px;margin-bottom:19px ">
+		<div class="col-sm-4" style="margin-top:0px">
 			<div class="container-fluid bg-1 text-center">
 				<h3>Who Am I?</h3>
 				<img src="<c:url value="/resource/images/aboutImage.png"/>" class="img-circle" alt="AboutUs" width="350"
