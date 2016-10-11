@@ -25,6 +25,7 @@
 		<table class="table table-hover" id="productList">
 			<thead>
 				<tr>
+					<th>Screen-Shot</th>
 					<th>Product-Id</th>
 					<th>Category</th>
 					<th>Product-Name</th>
@@ -38,7 +39,8 @@
 			<tbody>
 				<c:forEach items="${products}" var="prod">
 					<tr>
-						<td>${prod.productId}</a></td>
+						<td><img src="<c:url value="/resource/images/products/${prod.productId}.jpg"/>" alt="${prod.productName}" width="40%" /></td>
+						<td>${prod.productId}</td>
 						<td>${prod.productCategory}</td>
 						<td>${prod.productName}</td>
 						<td>${prod.productPrice}</td>

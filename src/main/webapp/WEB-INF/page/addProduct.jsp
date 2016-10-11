@@ -27,7 +27,7 @@
 
 				<!--  RegisterServlet  form -->
 				<c:url value="/admin/product/addProduct" var="url"></c:url>
-				<form:form method="post" action="${url}" commandName="productFormObj" >
+				<form:form method="post" action="${url}" commandName="productFormObj" enctype="multipart/form-data">
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-6 form-group">
@@ -78,12 +78,10 @@
 									path="unitStock"></form:input>
 							</div>
 						</div>
-					<!-- 	<div class="form-group">
+					 	<div class="form-group">
 						<form:label path="productImage">Product Image</form:label>
-								 <form:input type="file"
-									placeholder="Enter First Name.." class="form-control"
-									path="productImage"></form:input>
-						</div>  -->
+							<form:input type="file" path="productImage"/>
+						</div>  
 						<div class="form-actions">
 							<button type="submit" class="btn btn-lg btn-info">Submit</button>
 						</div>

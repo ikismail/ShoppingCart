@@ -12,10 +12,15 @@
 </head>
 <body>
 	<div class="container" style="width:829px">
-		<h2>Bordered Table</h2>
-		<p>The .table-bordered class adds borders to a table:</p>
+		<h2>Product Details</h2>
+		<p>Details of the Product</p>
 		<table class="table table-bordered" id="prod" >
 			<tbody>
+				
+				<tr>
+					<td>Prodcut Image</td>
+					<td><img src="<c:url value="/resource/images/products/${productObj.productId}.jpg"/>" width="40%" alt="${productObj.productName}" /></td>
+				</tr>
 				<tr>
 					<td>Prodcut ID</td>
 					<td>${productObj.productId }</td>
