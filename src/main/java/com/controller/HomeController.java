@@ -2,7 +2,9 @@ package com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.ProductDao;
@@ -45,14 +47,14 @@ public class HomeController {
 		}
 
 		@RequestMapping("/login")
-		public String saylogin() {
+		public String login(@RequestParam(value="error",required=false) String error, @RequestParam(value="logout",required=false)String logout, Model model) {
+			if(error != null)
+				model.addAttribute("error", "Invalid username and Password");
+			if(logout!=null)
+				model.addAttribute("logout", "ou have logged out successfully");
 			return "login";
 		}
 
-		@RequestMapping("/register")
-		public String sayRegister() {
-			return "register";
-		}
 		@RequestMapping("/aboutus")
 		public String sayAbout() {
 			return "aboutUs";

@@ -45,16 +45,29 @@
 				<value>com.model</value>
 			</list>
 		</property>
-<!-- 		<property name="annotatedClasses"> -->
-<!-- 		<list> -->
-<!-- 			<value>com.model.Product</value> -->
-<!-- 			<value>com.model.Category</value> -->
-<!-- 		</list> -->
-<!-- 		</property> -->
+
 	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<!-- Spring - Security Purpose -->
+	<security:http auto-config="true" use-expressions="true">
+	<security:intercept-url pattern="/index*/**" access="permitAll"/>
+	<security:intercept-url pattern="/admin*/**" access="hasRole('ROLE_ADMIN')"/>
+	<security:intercept-url pattern="/get*/**" access="hasAnRole('ROLE_ADMIN','ROLE_USER')"/>
+	<security:form-login />
+	<security:logout />
+	</security:http>
+	
+	<security:authentication-manager>
+	<security:authentication-provider>
+	<security:user-service>
+	<security:user name="ikismail7@gmail.com" password="12345" authorities="ROLE_USER"/>
+	<security:user name="ajmal@gmail.com" password="54321" authorities="ROLE_ADMIN"/>
+	</security:user-service>
+	</security:authentication-provider>
+	</security:authentication-manager>
 
 </beans>

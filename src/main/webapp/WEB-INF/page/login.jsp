@@ -29,22 +29,25 @@
                         <h3 class="panel-title" align="center">Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                    <c:if test="${not empty logout}">
+                    	<div class="error" style="color: #ff0000">${logout}</div>
+                    </c:if>
+                        <form name="loginForm" action="<c:url value="/j_spring_security_check"/>" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+                                    <input class="form-control" placeholder="E-mail" name="j_username" type="email" >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="j_password" type="password" >
                                 </div>
                                 <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+                                    <c:if test="${not empty error}">
+                                    <div class="error" style="color: #ff0000">${error}</div>
+                                    </c:if>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <div id="button">
-                                <a href="javascript:;" class="btn btn-sm btn-success" style="margin-right:79px; margin-left:60px">Login</a>
+                                <button type="submit" class="btn btn-sm btn-success" style="margin-right:79px; margin-left:60px">Login</button>
                                 <a href="<c:url value="/register"/>" class="btn btn-sm btn-success" >Register</a>
                             	</div>
                             </fieldset>
