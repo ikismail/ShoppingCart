@@ -33,7 +33,12 @@
 					<th>Stock Unit</th>
 					<th>Description</th>
 					<th>Manufacturer</th>
-					<th>View/Edit/Delete</th>
+					<th>View
+<!-- 					views only to the admin -->
+				<security:authorize ifAnyGranted="ROLE_ADMIN">
+					/Edit/Delete
+					</security:authorize>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -49,10 +54,14 @@
 						<td>${prod.productManufacturer}</td>
 						<td><a href="getProductById/${prod.productId}"> <span
 								class="glyphicon glyphicon-info-sign"></span></a> 
+<!-- 						view only to the admin -->
+						<security:authorize ifAnyGranted="ROLE_ADMIN">		
 								<a href="admin/product/editProduct/${prod.productId}"> <span
 								class="glyphicon glyphicon-edit"></span></a>
 						    <a href="admin/delete/${prod.productId}"> <span
-								class="glyphicon glyphicon-trash"></span></a></td>  
+								class="glyphicon glyphicon-trash"></span></a>
+						</security:authorize>
+						</td>  
 					</tr>
 				</c:forEach>
 			</tbody>

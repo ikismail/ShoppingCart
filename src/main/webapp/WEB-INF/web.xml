@@ -4,6 +4,8 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
 	<display-name>List of Books</display-name>
+	
+<!-- 	to connect the dispatcher servlet and applicationContext -->
 	<context-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>
@@ -11,6 +13,22 @@
 		/WEB-INF/applicationContext.xml
 	</param-value>
 	</context-param>
+	
+	<filter>
+	<filter-name>
+	springSecurityFilterChain
+	</filter-name>
+	<filter-class>
+	org.springframework.web.filter.DelegatingFilterProxy
+	</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	<filter-name>springSecurityFilterChain</filter-name>
+	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+<!-- 	it is used to listen the contextloader -->
 	<listener>
 	<listener-class>
 	org.springframework.web.context.ContextLoaderListener
