@@ -51,7 +51,7 @@ public class HomeController {
 			if(error != null)
 				model.addAttribute("error", "Invalid username and Password");
 			if(logout!=null)
-				model.addAttribute("logout", "ou have logged out successfully");
+				model.addAttribute("logout", "You have logged out successfully");
 			return "login";
 		}
 

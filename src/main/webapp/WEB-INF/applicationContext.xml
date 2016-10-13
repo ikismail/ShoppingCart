@@ -5,9 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/security 
-       http://www.springframework.org/schema/security/spring-security.xsd 
-       http://www.springframework.org/schema/webflow-config 
-       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+       http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<!-- databse properties DataSource -->
 	<bean id="dataSource"
@@ -54,19 +52,23 @@
 
 	<!-- Spring - Security Purpose -->
 	<security:http auto-config="true" use-expressions="true">
-	<security:intercept-url pattern="/index*/**" access="permitAll"/>
+	<security:intercept-url pattern="/index/**" access="permitAll"/>
+	<security:intercept-url pattern="/index1/**" access="permitAll"/>
+	<security:intercept-url pattern="/get*/**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
 	<security:intercept-url pattern="/admin*/**" access="hasRole('ROLE_ADMIN')"/>
-	<security:intercept-url pattern="/get*/**" access="hasAnRole('ROLE_ADMIN','ROLE_USER')"/>
-	<security:form-login />
-	<security:logout />
+	<security:form-login login-page="/login" authentication-failure-url="/login?error" default-target-url="/index1"/>
+	<security:logout logout-success-url="/login?logout" />
 	</security:http>
 	
 	<security:authentication-manager>
 	<security:authentication-provider>
 	<security:user-service>
-	<security:user name="ikismail7@gmail.com" password="12345" authorities="ROLE_USER"/>
+	<security:user name="ismail@gmail.com" password="12345" authorities="ROLE_USER"/>
 	<security:user name="ajmal@gmail.com" password="54321" authorities="ROLE_ADMIN"/>
 	</security:user-service>
+<!-- 	<security:jdbc-user-service data-source-ref="dataSource"  
+    	authorities-by-username-query="SELECT emailId,roleType FROM author WHERE emailId =?" 
+    	users-by-username-query="SELECT emailId, password, enabled FROM author WHERE emailId=? "/> -->
 	</security:authentication-provider>
 	</security:authentication-manager>
 
