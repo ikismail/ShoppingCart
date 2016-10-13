@@ -25,9 +25,7 @@
 					·
 					<a href="<c:url value="/aboutus"/>">About Us</a>
 					·
-					<a href="#">Pricing</a>
-					·
-					<a href="#">Product List</a>
+					<a href="<c:url value="/getAllProducts" />">Product List</a>
 					·
 					<a href="#">Contact Us</a>
 				</p>
