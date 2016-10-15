@@ -2,7 +2,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.demo</groupId>
-	<artifactId>pages</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pages Maven Webapp</name>
@@ -82,13 +81,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.hibernate.common</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<version>4.0.1.Final</version>
@@ -128,4 +120,5 @@
 	<build>
 		<finalName>pages</finalName>
 	</build>
+	<artifactId>ShoppingCart</artifactId>
 </project>

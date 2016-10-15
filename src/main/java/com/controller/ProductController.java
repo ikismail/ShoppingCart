@@ -43,7 +43,7 @@ public class ProductController {
 		this.productService = productService;
 	}
 	
-	//Configuration f MultiPartResolver
+	//Configuration for MultiPartResolver
 	
 	@Bean
 	public MultipartResolver multipartResolver(){
@@ -65,6 +65,7 @@ public class ProductController {
 		Product product = productService.getProductById(productId);
 		return new ModelAndView("productPage", "productObj", product);
 	}
+	
 
 	@RequestMapping("/admin/delete/{productId}")
 	public String deleteProduct(@PathVariable(value = "productId") String productId) {

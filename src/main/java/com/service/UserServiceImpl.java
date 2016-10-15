@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.UserDao;
+import com.model.Product;
 import com.model.User;
 
 @Service
@@ -27,6 +28,10 @@ public class UserServiceImpl implements UserService {
 	@Transactional 
 	public void addUser(User user){
 		userDao.addUser(user);
+	}
+	
+	public User getUserById(String userId) {
+		return userDao.getUserById(userId);
 	}
 
 	

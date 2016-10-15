@@ -19,7 +19,7 @@
 	href="<c:url value="/resource/css/productList.css"/>">
 </head>
 <body>
-	<div class="container" id="productTable" style="width:1145px">
+	<div class="container" id="productTable" style="width:1000px">
 		<h2>User Management</h2>
 		<p>The List of Users in our Database</p>
 		<table class="table table-hover" id="productList">
