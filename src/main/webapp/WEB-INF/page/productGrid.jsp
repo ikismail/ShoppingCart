@@ -28,7 +28,7 @@ body, h1, h2, h3, h4, h5 {
 <body>
 	<div class="w3-row-padding" style="padding:0px 30px; margin-bottom: 20px">
 		<div class="w3-third w3-container w3-margin-bottom">
-			<a href="getProductById/2"><img src="<c:url value="/resource/images/products/2.jpg"/>" alt="Norway" style="width: 100%"
+			<a href="getProductById/2"><img src="<c:url value="/resource/images/products/two.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity"></a>
 			<div class="w3-container w3-white">
 				<p>
@@ -45,7 +45,7 @@ body, h1, h2, h3, h4, h5 {
 			</div>
 		</div>
 		<div class="w3-third w3-container w3-margin-bottom">
-			<a href="getProductById/7"><img src="<c:url value="/resource/images/products/7.jpg"/>" alt="Norway" style="width: 100%"
+			<a href="getProductById/7"><img src="<c:url value="/resource/images/products/seven.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity"></a>
 			<div class="w3-container w3-white">
 				<p>
@@ -62,7 +62,7 @@ body, h1, h2, h3, h4, h5 {
 			</div>
 		</div>
 		<div class="w3-third w3-container w3-margin-bottom">
-			<a href="getProductById/5"><img src="<c:url value="/resource/images/products/5.jpg"/>" alt="Norway" style="width: 100%"
+			<a href="getProductById/5"><img src="<c:url value="/resource/images/products/five.jpg"/>" alt="Norway" style="width: 100%"
 				class="w3-hover-opacity"></a>
 			<div class="w3-container w3-white">
 				<p>

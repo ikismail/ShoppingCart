@@ -20,13 +20,13 @@
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<div class="container" style="margin-bottom: 0px">
+	<div class="container" style="margin-bottom: 19px">
 		<h1 class="well">Register Here !</h1>
 		<div class="col-lg-12 well">
 			<div class="row">
 
 				<!--  RegisterServlet  form -->
-				<c:url value="/addUser" var="url"></c:url>
+				<c:url value="/register" var="url"></c:url>
 				<form:form method="post" action="${url}" commandName="userFormObj"
 					enctype="multipart/form-data">
 					<div class="col-sm-12">

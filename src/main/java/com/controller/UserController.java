@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.model.Product;
 import com.model.User;
 import com.service.UserService;
 
@@ -29,11 +30,17 @@ public class UserController {
 		return new ModelAndView("UserList","users",users);
 	}
 	
-	@RequestMapping("/admin/delete/{userId}")
+	@RequestMapping("cart/getUserById/{userId}")
+	public ModelAndView getProductById(@PathVariable(value = "userId") String userId) {
+		User user = userService.getUserById(userId);
+		return new ModelAndView("addCart", "userObj", user);
+	}
+	
+	@RequestMapping("/user/delete/{userId}")
 	public String deleteUser(@PathVariable(value = "userId") String userId) {
 		userService.deleteUser(userId);
 		//http://localhost:8080/shoppingCart/getAllProducts
-		return "redirect:/admin/user/getAllUsers";
+		return "redirect:/admin/getAllUsers";
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)

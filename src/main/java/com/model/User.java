@@ -123,23 +123,4 @@ public class User {
 		this.roleType = roleType;
 	}
 
-	public User(String userId, String firstName, String lastName, String address, String city, String state, String gender,
-			String phNumber, String emailId, String password, String roleType) {
-		super();
-		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.gender = gender;
-		this.phNumber = phNumber;
-		this.emailId = emailId;
-		this.password = password;
-		this.roleType = roleType;
-	}
-
-	public User(){
-		
-	}
 }
