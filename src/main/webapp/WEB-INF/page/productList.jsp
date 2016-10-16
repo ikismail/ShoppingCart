@@ -27,14 +27,19 @@
 			<thead>
 				<tr>
 					<th>Screen-Shot</th>
-					<th>Product-Id</th>
+					<th>Product Id</th>
 					<th>Category</th>
-					<th>Product-Name</th>
-					<th>Product-Price</th>
+					<th>Product Name</th>
+					<th>Products Price</th>
 					<th>Stock Unit</th>
 					<th>Description</th>
 					<th>Manufacturer</th>
-					<th>View / Add to Cart <!-- 					views only to the admin --> <security:authorize
+					<th>View 
+					<security:authorize ifAnyGranted="ROLE_USER">
+					/ Add to Cart
+					</security:authorize>
+					 <!-- 					views only to the admin -->
+					  <security:authorize
 							ifAnyGranted="ROLE_ADMIN">
 					/Edit/Delete
 					</security:authorize>
@@ -45,14 +50,14 @@
 				<c:forEach items="${products}" var="prod">
 					<tr>
 						<td style="width: 171px"><img
-							src="<c:url value="/resource/images/products/${prod.productId}.jpg"/>"
-							alt="${prod.productName}" width="40%" /></td>
+							src="<c:url value="/resource/images/products/${prod.productId}.jpg"/>" style="width: 100px;height: 90px;
+							alt="${prod.productName}"  /></td>
 						<td>${prod.productId}</td>
 						<td>${prod.productCategory}</td>
 						<td>${prod.productName}</td>
 						<td>${prod.productPrice}</td>
 						<td>${prod.unitStock}</td>
-						<td>${prod.productDescription}</td>
+						<td style="width: 180px">${prod.productDescription}</td>
 						<td>${prod.productManufacturer}</td>
 						<td><a href="getProductById/${prod.productId}"
 							class="btn btn-info" role="button"> <span

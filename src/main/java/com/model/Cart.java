@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="cart")
@@ -20,7 +21,18 @@ public class Cart {
 	@Column
 	private String quantity;
 	@Column
-	private String totalPrice;	
+	private String totalPrice;
+	
+	private String date;
+	
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 	public String getCartId() {
 		return cartId;

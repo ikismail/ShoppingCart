@@ -19,42 +19,32 @@
 	href="<c:url value="/resource/css/productList.css"/>">
 </head>
 <body>
-	<div class="container" id="productTable" style="width:1000px">
+	<div class="container" id="productTable" style="width:1145px">
 		<h2>User Management</h2>
 		<p>The List of Users in our Database</p>
 		<table class="table table-hover" id="productList">
 			<thead>
 				<tr>
-					<th>User Id</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Address</th>
-					<th>Gender</th>
-					<th>State</th>
-					<th>City</th>
-					<th>Phone Number</th>
-					<th>emailId</th>
-					<th>password</th>
-					<th>RoleType</th>
+					<th style="visibility: hidden;">CartId</th>
+					<th>Product Name</th>
+					<th>Product Price</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					<th>Date</th>
+					<th>Remove</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${users}" var="user">
+				<c:forEach items="${carts}" var="cart">
 					<tr>
-						<td>${user.userId}</td>
-						<td>${user.firstName}</td>
-						<td>${user.lastName}</td>
-						<td>${user.address}</td>
-						<td>${user.gender}</td>
-						<td>${user.state}</td>
-						<td>${user.city}</td>
-						<td>${user.phNumber}</td>
-						<td>${user.emailId}</td>
-						<td>${user.password}</td>
-						<td>${user.roleType}</td>
-						
+						<td style="visibility: hidden;">${cart.cartId}</td>
+						<td>${cart.productName}</td>
+						<td>${cart.productPrice}</td>
+						<td>${cart.quantity}</td>
+						<td>${cart.totalPrice}</td>
+						<td style="width: 170px">${cart.date}</td>
 						<td>
-						    <a href="user/delete/${user.userId}"> <span
+						    <a href="delete/${cart.cartId}" class="btn btn-danger"> <span
 								class="glyphicon glyphicon-trash"></span></a></td>  
 					</tr>
 				</c:forEach>
