@@ -1,6 +1,9 @@
 package com.controller;
 
-import java.util.Date;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -16,9 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.model.Cart;
-import com.model.Product;
 import com.service.CartService;
-import com.service.ProductService;
 
 @Controller
 public class CartController {
@@ -50,6 +51,12 @@ public class CartController {
 		}
 			
 		cartService.addCart(cart);
+		return "redirect:/getAllProducts";
+	}
+	
+	@RequestMapping("/delete/{cartId}")
+	public String deleteProduct(@PathVariable(value = "cartId") String cartId) {		
+		cartService.deleteCart(cartId);
 		return "redirect:/getAllProducts";
 	}
 }
