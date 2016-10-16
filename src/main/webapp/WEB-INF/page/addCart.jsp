@@ -27,13 +27,14 @@
 								 <form:input type="text"
 									path="cartId" ></form:input>
 							</div>
-							<div class="col-sm-6 form-group">
+							<div class="col-sm-4 form-group">
 								<form:label path="productName">Product Name</form:label>
 								 <form:input type="text" value="${productObj.productName}"
 									placeholder="Enter Product Name.." class="form-control"
 									path="productName" ></form:input>
 								 <form:errors path="productName"></form:errors>
 							</div>
+							
 							<div class="col-sm-4 form-group">
 								<form:label path="productPrice">Product Price</form:label>
 								 <form:input type="text" id="price"
