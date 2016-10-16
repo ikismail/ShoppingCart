@@ -13,8 +13,9 @@
 	href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value="/resource/css/productGrid.css"/>">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 body, h1, h2, h3, h4, h5 {
 	font-family: "Raleway", sans-serif
