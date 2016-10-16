@@ -65,6 +65,7 @@
 	<security:user-service>
 	<security:user name="ismail@gmail.com" password="12345" authorities="ROLE_USER"/>
 	<security:user name="ajmal@gmail.com" password="54321" authorities="ROLE_ADMIN"/>
+	<security:user name="kumar@gmail.com" password="0" authorities="ROLE_USER" />
 	</security:user-service>
 <!-- 	<security:jdbc-user-service data-source-ref="dataSource"  
     	authorities-by-username-query="SELECT emailId,roleType FROM author WHERE emailId =?" 
