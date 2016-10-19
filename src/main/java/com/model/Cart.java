@@ -1,35 +1,37 @@
 package com.model;
 
-import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="cart")
+@Table(name = "cart")
 public class Cart {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String cartId;
-	@Column
-	private String productName;
-	@Column
-	private String productPrice;
-	@Column
-	private String quantity;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "customerId")
+	private Customer customer;
+
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+	private List<CartItem> cartItem;
+
 	@Column
 	private String totalPrice;
-	
+
 	private String date;
-	
 
 	public String getDate() {
 		return date;
@@ -47,30 +49,6 @@ public class Cart {
 		this.cartId = cartId;
 	}
 
-	public String getProductName() {
-		return productName;
-	}
-
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-
-	public String getProductPrice() {
-		return productPrice;
-	}
-
-	public void setProductPrice(String productPrice) {
-		this.productPrice = productPrice;
-	}
-
-	public String getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-
 	public String getTotalPrice() {
 		return totalPrice;
 	}
@@ -78,8 +56,5 @@ public class Cart {
 	public void setTotalPrice(String totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-
-
-	
 
 }

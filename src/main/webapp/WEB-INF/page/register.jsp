@@ -26,16 +26,11 @@
 			<div class="row">
 
 				<!--  RegisterServlet  form -->
-				<c:url value="/register" var="url"></c:url>
-				<form:form method="post" action="${url}" commandName="userFormObj"
+				<c:url value="/customer/registration" var="url"></c:url>
+				<form:form method="post" action="${url}" commandName="customer"
 					enctype="multipart/form-data">
 					<div class="col-sm-12">
 						<div class="row">
-							<div style="visibility: hidden;">
-								<form:label path="userId">User Id</form:label>
-								<form:input type="text" placeholder="Enter ProductId.."
-									path="userId" disabled="true"></form:input>
-							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="firstName">First Name</form:label>
 								<form:input type="text" placeholder="Enter Product Name.."
@@ -49,50 +44,59 @@
 							</div>
 						</div>
 						<div class="row">
+						<c:if test="${not empty duplicateEmailId}">
+						 ${duplicateEmailId}
+						</c:if>
 							<div class="col-sm-6 form-group">
-								<form:label path="emailId">Email Id</form:label>
+								<form:label path="users.emailId">Email Id</form:label>
 								<form:input type="text" placeholder="Enter Email ID.."
-									class="form-control" path="emailId"></form:input>
-								<form:errors path="emailId"></form:errors>
+									class="form-control" path="users.emailId"></form:input>
+								<form:errors path="users.emailId"></form:errors>
 							</div>
 							<div class="col-sm-6 form-group">
-								<form:label path="phNumber">Phone Number</form:label>
+								<form:label path="customerPhone">Phone Number</form:label>
 								<form:input type="text" placeholder="Enter Phone Number.."
-									class="form-control" path="phNumber"></form:input>
-								<form:errors path="phNumber"></form:errors>
+									class="form-control" path="customerPhone"></form:input>
+								<form:errors path="customerPhone"></form:errors>
 							</div>
 						</div>
 						<div class="form-group">
-							<form:label path="address">Address</form:label>
+							<form:label path="shippingAddress.address">Address</form:label>
 							<form:textarea type="text" placeholder="Enter Address.."
-								class="form-control" path="address"></form:textarea>
+								class="form-control" path="shippingAddress.address"></form:textarea>
 						</div>
-						
-							<div class="col-sm-6 form-groups">
-								<form:label path="gender">Gender</form:label>
-								<form:radiobutton path="gender" value="male" />
-								Male
-								<form:radiobutton path="gender" value="female" />
-								Female
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<form:label path="shippingAddress.city">City</form:label>
+								<form:input type="text"
+									placeholder="Enter Current City.." class="form-control"
+									path="shippingAddress.city"></form:input>
+							</div>
+							<div class="col-sm-6 form-group">
+								<form:label path="shippingAddress.state">State</form:label>
+								<form:input type="text" placeholder="Enter Product Price.."
+									class="form-control" path="shippingAddress.state"></form:input>
+								<form:errors path="shippingAddress.state"></form:errors>
+							</div>
 							</div>
 							<div class="row">
 							<div class="col-sm-6 form-group">
-								<form:label path="city">City</form:label>
+								<form:label path="shippingAddress.country">Country</form:label>
 								<form:input type="text"
 									placeholder="Enter Current City.." class="form-control"
-									path="city"></form:input>
+									path="shippingAddress.country"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
-								<form:label path="state">State</form:label>
+								<form:label path="shippingAddress.zipcode">Zipcode</form:label>
 								<form:input type="text" placeholder="Enter Product Price.."
-									class="form-control" path="state"></form:input>
-								<form:errors path="state"></form:errors>
+									class="form-control" path="shippingAddress.zipcode"></form:input>
+								<form:errors path="shippingAddress.zipcode"></form:errors>
 							</div>
 							</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
-								<form:label path="password">Password</form:label>
-								<form:input type="password" placeholder="********" class="form-control" path="password" id="pass" ></form:input>
+								<form:label path="users.password">Password</form:label>
+								<form:input type="password" placeholder="********" class="form-control" path="users.password" id="pass" ></form:input>
 							</div>		
 							<div class="col-sm-6 form-group">
 								<label >Confirm Password</label>
@@ -102,10 +106,6 @@
 						<div class="form-actions">
 							<button type="submit" class="btn btn-lg btn-info" onclick="return Validate()">Submit</button>
 						</div>
-						<div style="visibility: hidden;">
-								<form:label path="roleType">Role_Type</form:label>
-								<form:radiobutton path="roleType" value="ROLE_USER" />ROLE_USER
-							</div>
 					</div>
 				</form:form>
 			</div>
