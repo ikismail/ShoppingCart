@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/security 
        http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<!-- databse properties DataSource -->
+	<!-- database properties DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
@@ -37,7 +37,7 @@
 			</props>
 		</property>
 
-		<!-- for Entity Classes annotated Classes package -->
+		<!-- packages to scan for Entity Classes annotated Classes package -->
 		<property name="packagesToScan">
 			<list>
 				<value>com.model</value>
@@ -45,6 +45,11 @@
 		</property>
 
 	</bean>
+
+	<!-- A transaction manager is the part of an application that is responsible 
+		for coordinating transactions across one or more resources. In the Spring 
+		framework, the transaction manager is effectively the root of the transaction 
+		system. -->
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
@@ -52,25 +57,32 @@
 
 	<!-- Spring - Security Purpose -->
 	<security:http auto-config="true" use-expressions="true">
-	<security:intercept-url pattern="/index/**" access="permitAll"/>
-	<security:intercept-url pattern="/index1/**" access="permitAll"/>
-	<security:intercept-url pattern="/get*/**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
-	<security:intercept-url pattern="/admin*/**" access="hasRole('ROLE_ADMIN')"/>
-	<security:form-login login-page="/login" authentication-failure-url="/login?error" default-target-url="/index1"/>
-	<security:logout logout-success-url="/login?logout" />
+		<security:intercept-url pattern="/index/**"
+			access="permitAll" />
+		<security:intercept-url pattern="/index1/**"
+			access="permitAll" />
+		<security:intercept-url pattern="/get*/**"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
+		<security:intercept-url pattern="/admin*/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:form-login login-page="/login"
+			authentication-failure-url="/login?error" default-target-url="/index1" />
+		<security:logout logout-success-url="/login?logout" />
 	</security:http>
-	
+
 	<security:authentication-manager>
-	<security:authentication-provider>
-	<security:user-service>
-	<security:user name="ismail@gmail.com" password="12345" authorities="ROLE_USER"/>
-	<security:user name="ajmal@gmail.com" password="54321" authorities="ROLE_ADMIN"/>
-	<security:user name="kumar@gmail.com" password="0" authorities="ROLE_USER" />
-	</security:user-service>
-<!-- 	<security:jdbc-user-service data-source-ref="dataSource"  
-    	authorities-by-username-query="SELECT emailId,roleType FROM author WHERE emailId =?" 
-    	users-by-username-query="SELECT emailId, password, enabled FROM author WHERE emailId=? "/> -->
-	</security:authentication-provider>
+		<security:authentication-provider>
+<!-- 			<security:user-service> -->
+<!-- 				<security:user name="ismail@gmail.com" password="12345" -->
+<!-- 					authorities="ROLE_USER" /> -->
+<!-- 				<security:user name="ajmal@gmail.com" password="54321" -->
+<!-- 					authorities="ROLE_ADMIN" /> -->
+<!-- 			</security:user-service> -->
+
+			 <security:jdbc-user-service data-source-ref="dataSource" authorities-by-username-query="SELECT 
+				emailId,authorities FROM authorities WHERE emailId =?" users-by-username-query="SELECT 
+				emailId, password, enabled FROM users WHERE emailId=? "/> 		</security:authentication-provider>
+
 	</security:authentication-manager>
 
 </beans>

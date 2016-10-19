@@ -30,12 +30,6 @@ public class HomeController {
 	@Autowired
 	ProductDao productDao;
 	
-	@RequestMapping("/test")
-	public String testpge(){
-		productDao.test();
-	return "Welcome";
-	}
-	
 	@RequestMapping({ "/index", "/index1" })
 		public String sayIndex() {
 			return "index1";

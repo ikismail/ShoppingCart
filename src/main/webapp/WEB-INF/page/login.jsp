@@ -36,6 +36,11 @@
 					<h3 class="panel-title" align="center">Sign In</h3>
 				</div>
 				<div class="panel-body">
+				
+					<c:if test="${not empty registrationSuccess}">
+					<div class ="error" style="color: #ff0000;">${registrationSuccess}</div>
+					</c:if>
+					
 					<c:if test="${not empty logout}">
 						<div class ="error" style="color: #ff0000;">${logout}</div>
 				</c:if>

@@ -42,17 +42,20 @@ public class ProductController {
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
-	
-	//Configuration for MultiPartResolver
-	
+
+	// Configuration for MultiPartResolver
+	// Multipart resolver is for uploading images and other media
+	// maxupload size is for image size should not be maximum than 10240000
+
 	@Bean
-	public MultipartResolver multipartResolver(){
+	public MultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 		multipartResolver.setMaxUploadSize(10240000);
 		return multipartResolver;
 	}
 
 	// Request Mapping
+	// which displays the list of products to the productList page
 
 	@RequestMapping("/getAllProducts")
 	public ModelAndView getAllProducts() {
@@ -60,32 +63,35 @@ public class ProductController {
 		return new ModelAndView("productList", "products", products);
 	}
 
+	// this is used for getting the product by productId
+
 	@RequestMapping("getProductById/{productId}")
 	public ModelAndView getProductById(@PathVariable(value = "productId") String productId) {
 		Product product = productService.getProductById(productId);
 		return new ModelAndView("productPage", "productObj", product);
 	}
-	
 
 	@RequestMapping("/admin/delete/{productId}")
 	public String deleteProduct(@PathVariable(value = "productId") String productId) {
-		
-		Path path = Paths.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/" + productId + ".jpg");
-		
-		if(Files.exists(path)){
-			try{
+
+		// Here the Path class is used to refer the path of the file
+
+		Path path = Paths.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/"
+				+ productId + ".jpg");
+
+		if (Files.exists(path)) {
+			try {
 				Files.delete(path);
-			}catch(IOException e){
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		productService.deleteProduct(productId);
-		//http://localhost:8080/shoppingCart/getAllProducts
+		// http://localhost:8080/shoppingCart/getAllProducts
 		return "redirect:/getAllProducts";
 	}
 
-	
 	@RequestMapping(value = "/admin/product/addProduct", method = RequestMethod.GET)
 	public String getProductForm(Model model) {
 		Product product = new Product();
@@ -99,37 +105,40 @@ public class ProductController {
 
 	@RequestMapping(value = "/admin/product/addProduct", method = RequestMethod.POST)
 	public String addProduct(@Valid @ModelAttribute(value = "productFormObj") Product product, BindingResult result) {
-		if(result.hasErrors())
+		// Binding Result is used if the form that has any error then it will
+		// redirect to the same page without performing any functions
+		if (result.hasErrors())
 			return "addProduct";
 		productService.addProduct(product);
 		MultipartFile image = product.getProductImage();
-		if(image!=null && !image.isEmpty()){
-			Path path = Paths.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/" + product.getProductId() + ".jpg");
-			
-			try{
+		if (image != null && !image.isEmpty()) {
+			Path path = Paths
+					.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/"
+							+ product.getProductId() + ".jpg");
+
+			try {
 				image.transferTo(new File(path.toString()));
-			}catch(IllegalStateException e){
+			} catch (IllegalStateException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 		return "redirect:/getAllProducts";
 	}
-	
-	
-	@RequestMapping(value="/admin/product/editProduct/{productId}")
-	public ModelAndView getEditForm(@PathVariable(value="productId") String productId){
+
+	@RequestMapping(value = "/admin/product/editProduct/{productId}")
+	public ModelAndView getEditForm(@PathVariable(value = "productId") String productId) {
 		Product product = productService.getProductById(productId);
-		return new ModelAndView("editProduct","editProductObj",product);
+		return new ModelAndView("editProduct", "editProductObj", product);
 	}
-	
-	@RequestMapping(value="/admin/product/editProduct", method=RequestMethod.POST)
-	public String editProduct(@ModelAttribute(value="editProductObj") Product product){
+
+	@RequestMapping(value = "/admin/product/editProduct", method = RequestMethod.POST)
+	public String editProduct(@ModelAttribute(value = "editProductObj") Product product) {
 		productService.editProduct(product);
 		return "redirect:/getAllProducts";
 	}
-	 
+
 }

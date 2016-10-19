@@ -1,6 +1,5 @@
 package com.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -24,9 +23,11 @@ public class CartController {
 	@Autowired
 	private CartService cartService;
 
-
+  
+	
 	@RequestMapping("/getAllCarts")
 	public ModelAndView getAllCarts() {
+		
 		List<Cart> carts = cartService.getAllCarts();
 		return new ModelAndView("CartList", "carts", carts);
 	}
