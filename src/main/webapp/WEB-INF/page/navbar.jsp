@@ -14,8 +14,10 @@
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resource/css/overall.css"/>">
+
 </head>
 <body>
+
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 
@@ -26,12 +28,14 @@
 				alt="logo-image"></img>
 			<div class="col-xs-6 ">
 				<label for="ex2"></label> <input class="form-control" id="ex3"
-					type="text" placeholder="Search...">
+					type="text" placeholder="Search..." >
 			</div>
 			<div>
-				<a href="#" class="btn btn-info"> <span
+				<security:authorize ifAnyGranted="ROLE_ADMIN,ROLE_USER">
+				<a href="<c:url value="/productsListAngular" />" class="btn btn-info"> <span
 					class="glyphicon glyphicon-search"></span> Search
 				</a>
+				</security:authorize>
 			</div>
 		</div>
 
@@ -83,6 +87,7 @@
 		</ul>
 	</div>
 	</nav>
+
 
 
 </body>
