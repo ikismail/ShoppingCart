@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,12 +47,6 @@ public class UserController {
 			BindingResult result) {
 		if (result.hasErrors())
 			return "register";
-		List<Customer> customerList = customerService.getAllCustomers();
-		for(Customer c: customerList){
-			if(c.getUsers().getEmailId().equals(customer.getUsers().getEmailId())){
-				model.addAttribute("duplicateEmailId", "EmailId already Exists");
-			}
-		}
 		customerService.addCustomer(customer);
 		model.addAttribute("registrationSuccess", "Registered Successfully. Login using username and password");
 		return "login";

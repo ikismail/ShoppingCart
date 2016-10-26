@@ -3,7 +3,6 @@ package com.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,33 +12,25 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "cart")
+@Table(name="cart")
 public class Cart {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String cartId;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customerId")
+	
+	@OneToOne
+	@JoinColumn(name="customerId")
+	@JsonIgnore
 	private Customer customer;
-
-	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy="cart",cascade=CascadeType.ALL)
 	private List<CartItem> cartItem;
-
-	@Column
-	private String totalPrice;
-
-	private String date;
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
+	
+	private double totalPrice;
 
 	public String getCartId() {
 		return cartId;
@@ -49,12 +40,29 @@ public class Cart {
 		this.cartId = cartId;
 	}
 
-	public String getTotalPrice() {
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public List<CartItem> getCartItem() {
+		return cartItem;
+	}
+
+	public void setCartItem(List<CartItem> cartItem) {
+		this.cartItem = cartItem;
+	}
+
+	public double getTotalPrice() {
 		return totalPrice;
 	}
 
-	public void setTotalPrice(String totalPrice) {
+	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-
+	
+	
 }

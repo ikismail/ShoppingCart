@@ -65,7 +65,7 @@
 						class="glyphicon glyphicon-shopping-user"></span>Welcome..${pageContext.request.userPrincipal.name}</a></li>
 
 				<security:authorize access="hasRole('ROLE_USER')">
-					<li><a href="<c:url value="/getAllCarts" />"><span
+					<li><a href="<c:url value="/cart/getCartById" />"><span
 							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 				</security:authorize>
 				<li><a href="<c:url value="/j_spring_security_logout" />"><span

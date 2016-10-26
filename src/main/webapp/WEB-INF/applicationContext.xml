@@ -61,6 +61,8 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/index1/**"
 			access="permitAll" />
+			<security:intercept-url pattern="/cart/**"
+			access="permitAll" />
 		<security:intercept-url pattern="/get*/**"
 			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
 		<security:intercept-url pattern="/admin*/**"

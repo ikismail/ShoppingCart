@@ -10,26 +10,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Products</title>
+
 <link rel="stylesheet"
 	href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resource/css/productList.css"/>">
-<c:url value="/resource/js/productController.js" var="url"/>
-<script>
-var app=angular.module("myapp",[])
-.controller("myController",function($scope,$http){
-	$scope.getProductList = function(){
-		$http.get("http://localhost:8090/pages/getProductsList").success(function (data){
-			$scope.products = data;
-		});
-	};
-});
-</script>
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="<c:url value="/resource/js/productController.js"/>"></script>
 </head>
 <body>
 	<div ng-app="myapp">
