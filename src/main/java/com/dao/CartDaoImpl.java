@@ -1,7 +1,5 @@
 package com.dao;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +13,21 @@ public class CartDaoImpl implements CartDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public List<Cart> getAllCarts() {
-		Session session = sessionFactory.openSession();
-		List<Cart> carts = session.createCriteria(Cart.class).list();
-		System.out.println(carts);
-		session.close();
-		return carts;
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
 	}
 
-	public void deleteCart(String cartId) {
-		Session session = sessionFactory.openSession();
-		Cart cart = (Cart) session.get(Cart.class, cartId);
-		session.delete(cart);
-		session.flush();
-		session.close();// close the session
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 
-	public void addCart(Cart cart) {
+	public Cart getCartByCartId(String CartId) {
 		Session session = sessionFactory.openSession();
-		session.save(cart);
-		session.close();
+		Cart cart = (Cart)session.get(Cart.class, CartId);
+		//System.out.println(cart.getCartId() + " " + cart.getCartItem());
+		System.out.println(cart);
+		return cart;
+		
 	}
+
 }

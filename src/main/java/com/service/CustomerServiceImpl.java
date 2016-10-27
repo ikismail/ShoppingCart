@@ -21,14 +21,16 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Transactional
 	public void addCustomer(Customer customer) {
-			customerDao.addCustomer(customer);
+		customerDao.addCustomer(customer);
 	}
 
-	@Transactional
 	public List<Customer> getAllCustomers() {
+
 		return customerDao.getAllCustomers();
 	}
-	
-	
+
+	public Customer getCustomerByemailId(String emailId) {
+		return customerDao.getCustomerByemailId(emailId);
+	}
 
 }

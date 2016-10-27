@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -55,6 +56,7 @@ public class ProductController {
 	}
 
 	// Request Mapping
+	
 	// which displays the list of products to the productList page
 
 	@RequestMapping("/getAllProducts")
@@ -139,6 +141,17 @@ public class ProductController {
 	public String editProduct(@ModelAttribute(value = "editProductObj") Product product) {
 		productService.editProduct(product);
 		return "redirect:/getAllProducts";
+	}
+	
+	
+	@RequestMapping("/getProductsList")
+	public @ResponseBody List<Product> getProductsListInJson(){
+		return productService.getAllProducts();
+	}
+	
+	@RequestMapping("/productsListAngular")
+	public String getProducts(){
+		return "productListAngular";
 	}
 
 }

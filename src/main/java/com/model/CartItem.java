@@ -8,24 +8,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="cartItems")
+@Table(name = "cartitem")
 public class CartItem {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String cartItemId;
-	
-	private String quanity;
-	
-	private String price;
-	
+
+	private int quality;
+
+	private double price;
+
 	@ManyToOne
-	@JoinColumn(name="productId")
+	@JoinColumn(name = "productId")
 	private Product product;
-	
+
 	@ManyToOne
-	@JoinColumn(name="cartId")
+	@JoinColumn(name = "cartId")
+	@JsonIgnore
 	private Cart cart;
 
 	public String getCartItemId() {
@@ -36,19 +39,19 @@ public class CartItem {
 		this.cartItemId = cartItemId;
 	}
 
-	public String getQuanity() {
-		return quanity;
+	public int getQuality() {
+		return quality;
 	}
 
-	public void setQuanity(String quanity) {
-		this.quanity = quanity;
+	public void setQuality(int quality) {
+		this.quality = quality;
 	}
 
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -67,7 +70,5 @@ public class CartItem {
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-	
-	
-	
+
 }

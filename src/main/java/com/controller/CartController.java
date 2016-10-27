@@ -1,60 +1,56 @@
 package com.controller;
 
-import java.util.List;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.model.Cart;
+import com.model.Customer;
 import com.service.CartService;
+import com.service.CustomerService;
 
 @Controller
 public class CartController {
 
 	@Autowired
+	private CustomerService customerService;
+	
+	@Autowired
 	private CartService cartService;
 
-  
-	
-	@RequestMapping("/getAllCarts")
-	public ModelAndView getAllCarts() {
-		
-		List<Cart> carts = cartService.getAllCarts();
-		return new ModelAndView("CartList", "carts", carts);
+	public CustomerService getCustomerService() {
+		return customerService;
 	}
-	
-	@RequestMapping(value = "/cart/addCart", method = RequestMethod.GET)
-	public String getProductForm(Model model) {
-		Cart cart = new Cart();
-		model.addAttribute("cartFormObj", cart);
-		return "addCart";
 
+	public void setCustomerService(CustomerService customerService) {
+		this.customerService = customerService;
 	}
-	
 
-	@RequestMapping(value = "/cart/addCart", method = RequestMethod.POST)
-	public String addProduct(@Valid @ModelAttribute(value = "cartFormObj") Cart cart, BindingResult result) {
-		if(result.hasErrors()){
-			System.out.println("Has Error"+result);
-			return "addCart";
-		}
-			
-		cartService.addCart(cart);
-		return "redirect:/getAllProducts";
+	public CartService getCartService() {
+		return cartService;
+	}
+
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
 	}
 	
-	@RequestMapping("/delete/{cartId}")
-	public String deleteProduct(@PathVariable(value = "cartId") String cartId) {		
-		cartService.deleteCart(cartId);
-		return "redirect:/getAllProducts";
+	@RequestMapping("cart/getCartById")
+	public String getCartId(Model model){
+		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String emailId = user.getUsername();
+		Customer customer = customerService.getCustomerByemailId(emailId);
+		model.addAttribute("cartId", customer.getCart().getCartId());
+		return "cart";
 	}
+	
+	@RequestMapping("/cart/getCart/{cartId}")
+	public @ResponseBody Cart getCartItems(@PathVariable(value="cartId")String cartId){
+		return cartService.getCartByCartId(cartId);
+	}
+	
 }

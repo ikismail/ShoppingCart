@@ -44,9 +44,6 @@
 							</div>
 						</div>
 						<div class="row">
-						<c:if test="${not empty duplicateEmailId}">
-						 ${duplicateEmailId}
-						</c:if>
 							<div class="col-sm-6 form-group">
 								<form:label path="users.emailId">Email Id</form:label>
 								<form:input type="text" placeholder="Enter Email ID.."
