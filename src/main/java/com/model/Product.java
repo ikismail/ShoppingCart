@@ -1,5 +1,7 @@
 package com.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "item")
-public class Product {
+public class Product implements Serializable {
+
+	private static final long serialVersionUID = 5186013952828648626L;
 
 	@Id
 	@Column(name = "Id")

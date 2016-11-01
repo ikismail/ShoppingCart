@@ -20,10 +20,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value="/resource/js/productController.js"/>"></script>
 </head>
-<body>
-	<div ng-app="myapp">
+<body ng-app="myapp">
+	<div >
 		<div ng-controller="myController" ng-init="getProductList()">
-			<div class="container" id="productTable" style="width: 1145px;">
+			<div class="container" id="productTable" style="width: 1145px;margin-bottom: 180px;">
 				<h2>Product Management</h2>
 				<p>The List of Products in our Database</p>
 				Search: <input type="text" ng-model="searchCondition"
@@ -65,12 +65,12 @@
 								class="btn btn-info" role="button"> <span
 									class="glyphicon glyphicon-info-sign"></span></a> 
 			
-			<!-- 						view only for user -->
+			<!-- 						view only for user 
 								<security:authorize ifAnyGranted="ROLE_USER">
-									<a href="cart/addCart" class="btn btn-primary"
+									<a href="#" ng-click="addToCart(${b.productId})" class="btn btn-primary"
 										style="margin-left: 5px"> <span
 										class="glyphicon glyphicon-shopping-cart"></span></a>
-								</security:authorize>
+								</security:authorize> -->
 			 <!-- 						view only to the admin --> <security:authorize
 									ifAnyGranted="ROLE_ADMIN">
 									<a href="admin/product/editProduct/{{b.productId}}"

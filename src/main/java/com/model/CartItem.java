@@ -1,5 +1,7 @@
 package com.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cartitem")
-public class CartItem {
+public class CartItem implements Serializable {
+
+	private static final long serialVersionUID = -2455760938054036364L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
