@@ -5,7 +5,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans.xsd 
        http://www.springframework.org/schema/security 
-       http://www.springframework.org/schema/security/spring-security.xsd">
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/webflow-config 
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
 
 	<!-- database properties DataSource -->
 	<bean id="dataSource"
@@ -61,7 +63,7 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/index1/**"
 			access="permitAll" />
-			<security:intercept-url pattern="/cart/**"
+		<security:intercept-url pattern="/cart/**"
 			access="permitAll" />
 		<security:intercept-url pattern="/get*/**"
 			access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
@@ -74,17 +76,37 @@
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-<!-- 			<security:user-service> -->
-<!-- 				<security:user name="ismail@gmail.com" password="12345" -->
-<!-- 					authorities="ROLE_USER" /> -->
-<!-- 				<security:user name="ajmal@gmail.com" password="54321" -->
-<!-- 					authorities="ROLE_ADMIN" /> -->
-<!-- 			</security:user-service> -->
+			<!-- <security:user-service> -->
+			<!-- <security:user name="ismail@gmail.com" password="12345" -->
+			<!-- authorities="ROLE_USER" /> -->
+			<!-- <security:user name="ajmal@gmail.com" password="54321" -->
+			<!-- authorities="ROLE_ADMIN" /> -->
+			<!-- </security:user-service> -->
 
-			 <security:jdbc-user-service data-source-ref="dataSource" authorities-by-username-query="SELECT 
-				emailId,authorities FROM authorities WHERE emailId =?" users-by-username-query="SELECT 
-				emailId, password, enabled FROM users WHERE emailId=? "/> 		</security:authentication-provider>
+			<security:jdbc-user-service
+				data-source-ref="dataSource"
+				authorities-by-username-query="SELECT 
+				emailId,authorities FROM authorities WHERE emailId =?"
+				users-by-username-query="SELECT 
+				emailId, password, enabled FROM users WHERE emailId=? " />
+		</security:authentication-provider>
 
 	</security:authentication-manager>
 
+	<webflow-config:flow-executor id="flowExecutor"
+		flow-registry="flowRegistry">
+	</webflow-config:flow-executor>
+	<webflow-config:flow-registry id="flowRegistry"
+		base-path="/WEB-INF/flow">
+		<webflow-config:flow-location path="/checkout/checkout-flow.xml"
+			id="checkout"></webflow-config:flow-location>
+	</webflow-config:flow-registry>
+	<bean id="flowHandleMapping"
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry"></property>
+	</bean>
+	<bean id="flowHandlerAdapter" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+	<property name="flowExecutor" ref="flowExecutor"></property>
+	</bean>
+	
 </beans>

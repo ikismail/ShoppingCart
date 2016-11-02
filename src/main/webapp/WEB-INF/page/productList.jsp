@@ -17,10 +17,12 @@
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resource/css/productList.css"/>">
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="<c:url value="/resource/js/productController.js"/>"></script>
 </head>
-<body>
-	<div class="container" id="productTable" style="width:1145px;">
+<body ng-app="myapp">
+	<div class="container" id="productTable" style="width:1145px;margin-bottom: 180px;">
 		<h2>Product Management</h2>
 		<p>The List of Products in our Database</p>
 		<table class="table table-hover" id="productList">
@@ -59,14 +61,14 @@
 						<td>${prod.unitStock}</td>
 						<td style="width: 180px">${prod.productDescription}</td>
 						<td>${prod.productManufacturer}</td>
-						<td><a href="getProductById/${prod.productId}"
+						<td ng-controller="myController"><a href="getProductById/${prod.productId}"
 							class="btn btn-info" role="button"> <span
 								class="glyphicon glyphicon-info-sign"></span></a>
 						
 <!-- 						view only for user -->
 						<security:authorize ifAnyGranted="ROLE_USER">								
 						 <a
-							href="cart/addCart" class="btn btn-primary" style="margin-left: 5px"> <span
+							href="#" ng-click="addToCart(${prod.productId})" class="btn btn-primary" style="margin-left: 5px"> <span
 								class="glyphicon glyphicon-shopping-cart"></span></a>
 							</security:authorize>
 								

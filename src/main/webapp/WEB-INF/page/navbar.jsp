@@ -53,8 +53,6 @@
 			<security:authorize access="hasRole('ROLE_ADMIN')">
 				<li><a href=" <c:url value="/admin/product/addProduct" />">Add
 						Product</a></li>
-				<li><a href=" <c:url value="/admin/getAllUsers" />">Users
-						List</a>
 			</security:authorize>
 		</ul>
 

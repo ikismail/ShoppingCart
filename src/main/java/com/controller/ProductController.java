@@ -56,15 +56,22 @@ public class ProductController {
 	}
 
 	// Request Mapping
-	
+
 	// which displays the list of products to the productList page
 
+	// Product List using Angular
 	@RequestMapping("/getAllProducts")
 	public ModelAndView getAllProducts() {
 		List<Product> products = productService.getAllProducts();
-		return new ModelAndView("productList", "products", products);
+		return new ModelAndView("productListAngular", "products", products);
 	}
 
+	/*		Normal ProductList view 
+	 * @RequestMapping("/getAllProducts") public ModelAndView getAllProducts() {
+	 * List<Product> products = productService.getAllProducts(); return new
+	 * ModelAndView("productList", "products", products); }
+	 */
+	
 	// this is used for getting the product by productId
 
 	@RequestMapping("getProductById/{productId}")
@@ -142,15 +149,14 @@ public class ProductController {
 		productService.editProduct(product);
 		return "redirect:/getAllProducts";
 	}
-	
-	
+
 	@RequestMapping("/getProductsList")
-	public @ResponseBody List<Product> getProductsListInJson(){
+	public @ResponseBody List<Product> getProductsListInJson() {
 		return productService.getAllProducts();
 	}
-	
+
 	@RequestMapping("/productsListAngular")
-	public String getProducts(){
+	public String getProducts() {
 		return "productListAngular";
 	}
 
