@@ -11,26 +11,38 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="customerorder")
+@Table(name = "customerorder")
 public class CustomerOrder implements Serializable {
 
 	private static final long serialVersionUID = -6571020025726257848L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String customerOrderId;
-	
+
 	@OneToOne
-	@JoinColumn(name="cartId")
+	@JoinColumn(name = "cartId")
 	private Cart cart;
-	
+
 	@OneToOne
-	@JoinColumn(name="customerId")
+	@JoinColumn(name = "customerId")
 	private Customer customer;
-	
+
 	@OneToOne
-	@JoinColumn(name="shippingAddressId")
+	@JoinColumn(name = "shippingAddressId")
 	private ShippingAddress shippingAddress;
+
+	@OneToOne
+	@JoinColumn(name = "billingAddressId")
+	private BillingAddress billingAddress;
+
+	public BillingAddress getBillingAddress() {
+		return billingAddress;
+	}
+
+	public void setBillingAddress(BillingAddress billingAddress) {
+		this.billingAddress = billingAddress;
+	}
 
 	public String getCustomerOrderId() {
 		return customerOrderId;
@@ -63,6 +75,5 @@ public class CustomerOrder implements Serializable {
 	public void setShippingAddress(ShippingAddress shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
-	
-	
+
 }

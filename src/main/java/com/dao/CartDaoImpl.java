@@ -45,7 +45,7 @@ public class CartDaoImpl implements CartDao {
 			throw new IOException(cartId + "");
 		}
 		update(cart);
-		return null;
+		return cart;
 	}
 
 	public void update(Cart cart) {
