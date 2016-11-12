@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.model.BillingAddress;
 import com.model.Customer;
 import com.model.ShippingAddress;
 import com.model.User;
@@ -34,8 +35,10 @@ public class UserController {
 	public ModelAndView getRegistrationForm() {
 		Customer customer = new Customer();
 		User user = new User();
+		BillingAddress ba = new BillingAddress();
 		ShippingAddress sa = new ShippingAddress();
 		customer.setShippingAddress(sa);
+		customer.setBillingAddress(ba);
 		customer.setUsers(user);
 
 		return new ModelAndView("register", "customer", customer);

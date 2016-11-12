@@ -32,6 +32,10 @@ public class Customer implements Serializable {
 	private ShippingAddress shippingAddress;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "billingAddressId")
+	private BillingAddress billingAddress;
+
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
 	private User users;
 
@@ -39,6 +43,14 @@ public class Customer implements Serializable {
 	@JoinColumn(name = "cartId")
 	@JsonIgnore
 	private Cart cart;
+
+	public BillingAddress getBillingAddress() {
+		return billingAddress;
+	}
+
+	public void setBillingAddress(BillingAddress billingAddress) {
+		this.billingAddress = billingAddress;
+	}
 
 	public Cart getCart() {
 		return cart;

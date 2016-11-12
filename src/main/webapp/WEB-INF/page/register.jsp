@@ -57,6 +57,7 @@
 								<form:errors path="customerPhone"></form:errors>
 							</div>
 						</div>
+						<div>Shipping Address:</div>
 						<div class="form-group">
 							<form:label path="shippingAddress.address">Address</form:label>
 							<form:textarea type="text" placeholder="Enter Address.."
@@ -65,9 +66,8 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.city">City</form:label>
-								<form:input type="text"
-									placeholder="Enter Current City.." class="form-control"
-									path="shippingAddress.city"></form:input>
+								<form:input type="text" placeholder="Enter Current City.."
+									class="form-control" path="shippingAddress.city"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.state">State</form:label>
@@ -75,13 +75,12 @@
 									class="form-control" path="shippingAddress.state"></form:input>
 								<form:errors path="shippingAddress.state"></form:errors>
 							</div>
-							</div>
-							<div class="row">
+						</div>
+						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.country">Country</form:label>
-								<form:input type="text"
-									placeholder="Enter Current City.." class="form-control"
-									path="shippingAddress.country"></form:input>
+								<form:input type="text" placeholder="Enter Current City.."
+									class="form-control" path="shippingAddress.country"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.zipcode">Zipcode</form:label>
@@ -89,19 +88,53 @@
 									class="form-control" path="shippingAddress.zipcode"></form:input>
 								<form:errors path="shippingAddress.zipcode"></form:errors>
 							</div>
+						</div>
+						<div>Billing Address:</div>
+						<div class="form-group">
+							<form:label path="billingAddress.address">Address</form:label>
+							<form:textarea type="text" placeholder="Enter Address.."
+								class="form-control" path="billingAddress.address"></form:textarea>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<form:label path="billingAddress.city">City</form:label>
+								<form:input type="text" placeholder="Enter Current City.."
+									class="form-control" path="billingAddress.city"></form:input>
 							</div>
+							<div class="col-sm-6 form-group">
+								<form:label path="billingAddress.state">State</form:label>
+								<form:input type="text" placeholder="Enter Product Price.."
+									class="form-control" path="billingAddress.state"></form:input>
+								<form:errors path="billingAddress.state"></form:errors>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<form:label path="billingAddress.country">Country</form:label>
+								<form:input type="text" placeholder="Enter Current City.."
+									class="form-control" path="billingAddress.country"></form:input>
+							</div>
+							<div class="col-sm-6 form-group">
+								<form:label path="billingAddress.zipcode">Zipcode</form:label>
+								<form:input type="text" placeholder="Enter Product Price.."
+									class="form-control" path="billingAddress.zipcode"></form:input>
+								<form:errors path="billingAddress.zipcode"></form:errors>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="users.password">Password</form:label>
-								<form:input type="password" placeholder="********" class="form-control" path="users.password" id="pass" ></form:input>
-							</div>		
+								<form:input type="password" placeholder="********"
+									class="form-control" path="users.password" id="pass"></form:input>
+							</div>
 							<div class="col-sm-6 form-group">
-								<label >Confirm Password</label>
-								<input type="password" placeholder="********" class="form-control"  id="confirmpass" />
-							</div>	
+								<label>Confirm Password</label> <input type="password"
+									placeholder="********" class="form-control" id="confirmpass" />
+							</div>
 						</div>
 						<div class="form-actions">
-							<button type="submit" class="btn btn-lg btn-info" onclick="return Validate()">Submit</button>
+							<button type="submit" class="btn btn-lg btn-info"
+								onclick="return Validate()">Submit</button>
 						</div>
 					</div>
 				</form:form>
@@ -109,13 +142,13 @@
 		</div>
 	</div>
 	<%@ include file="footer.jsp"%>
-	
+
 	<!-- Validating Password -->
 	<script type="text/javascript">
-		function Validate(){
+		function Validate() {
 			var password = document.getElementById("pass").value;
 			var confirmpass = document.getElementById("confirmpass").value;
-			if(password != confirmpass){
+			if (password != confirmpass) {
 				alert("Password does Not Match.");
 				return false;
 			}
