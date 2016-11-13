@@ -31,9 +31,10 @@
 					enctype="multipart/form-data">
 					<div class="col-sm-12">
 						<div class="row">
+							<div><center>User Details</center></div>
 							<div class="col-sm-6 form-group">
 								<form:label path="firstName">First Name</form:label>
-								<form:input type="text" placeholder="Enter Product Name.."
+								<form:input type="text" placeholder="Enter First Name.."
 									class="form-control" path="firstName"></form:input>
 								<form:errors path="firstName"></form:errors>
 							</div>
@@ -57,10 +58,10 @@
 								<form:errors path="customerPhone"></form:errors>
 							</div>
 						</div>
-						<div>Shipping Address:</div>
+						<div><center>Shipping Address</center></div>
 						<div class="form-group">
 							<form:label path="shippingAddress.address">Address</form:label>
-							<form:textarea type="text" placeholder="Enter Address.."
+							<form:textarea type="text" placeholder="Enter Shipping Address.."
 								class="form-control" path="shippingAddress.address"></form:textarea>
 						</div>
 						<div class="row">
@@ -71,7 +72,7 @@
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.state">State</form:label>
-								<form:input type="text" placeholder="Enter Product Price.."
+								<form:input type="text" placeholder="Enter your State.."
 									class="form-control" path="shippingAddress.state"></form:input>
 								<form:errors path="shippingAddress.state"></form:errors>
 							</div>
@@ -79,31 +80,31 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.country">Country</form:label>
-								<form:input type="text" placeholder="Enter Current City.."
+								<form:input type="text" placeholder="Enter your country.."
 									class="form-control" path="shippingAddress.country"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="shippingAddress.zipcode">Zipcode</form:label>
-								<form:input type="text" placeholder="Enter Product Price.."
+								<form:input type="text" placeholder="Enter zipcode.."
 									class="form-control" path="shippingAddress.zipcode"></form:input>
 								<form:errors path="shippingAddress.zipcode"></form:errors>
 							</div>
 						</div>
-						<div>Billing Address:</div>
+						<div><center>Billing Address</center></div>
 						<div class="form-group">
 							<form:label path="billingAddress.address">Address</form:label>
-							<form:textarea type="text" placeholder="Enter Address.."
+							<form:textarea type="text" placeholder="Enter Billing Address.."
 								class="form-control" path="billingAddress.address"></form:textarea>
 						</div>
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="billingAddress.city">City</form:label>
-								<form:input type="text" placeholder="Enter Current City.."
+								<form:input type="text" placeholder="Enter your City.."
 									class="form-control" path="billingAddress.city"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="billingAddress.state">State</form:label>
-								<form:input type="text" placeholder="Enter Product Price.."
+								<form:input type="text" placeholder="Enter your state.."
 									class="form-control" path="billingAddress.state"></form:input>
 								<form:errors path="billingAddress.state"></form:errors>
 							</div>
@@ -111,12 +112,12 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<form:label path="billingAddress.country">Country</form:label>
-								<form:input type="text" placeholder="Enter Current City.."
+								<form:input type="text" placeholder="Enter your City.."
 									class="form-control" path="billingAddress.country"></form:input>
 							</div>
 							<div class="col-sm-6 form-group">
 								<form:label path="billingAddress.zipcode">Zipcode</form:label>
-								<form:input type="text" placeholder="Enter Product Price.."
+								<form:input type="text" placeholder="Enter Zipcode.."
 									class="form-control" path="billingAddress.zipcode"></form:input>
 								<form:errors path="billingAddress.zipcode"></form:errors>
 							</div>
