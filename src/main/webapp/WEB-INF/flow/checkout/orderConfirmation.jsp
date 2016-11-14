@@ -21,16 +21,11 @@
 	</head>
 	<body style="padding: 0px;">
 		<div class="container-wrapper">
-	<div class="container">
-		<div class="page-header">
-			<h1>Order</h1>
-			<p class="lead">Order confirmation</p>
-		</div>
-	<div class="container">
-	 <div class="row">
+	<div class="container" style="margin-bottom: 19px">
+	 <div class="row" style="margin-top: 20px">
      <form:form commandName="order" class="form-horizontal">
-		<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
-		<div class="txt-center"><h1>Receipt</h1></div>
+		<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3" style="width: 100%; margin-left: 0%">
+		<div style="text-align: center;"><h1>Receipt</h1></div>
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-6">
 				<address>
@@ -59,55 +54,49 @@
 			</div>
 		</div>
 		<div class="row">
+		<div class="container">
 			<table class="table table-hover">
 				<thead>
     				<tr>
-					<td>Product</td>
-					<td>#</td>
-					<td class="text-center">Price</td>
-					<td class="text-center">Total</td>
+					<th class="text-center">Product</th>
+					<th class="text-center">Quantity</th>
+					<th class="text-center">Price</th>
+					<th class="text-center">Total</th>
 					</tr>
 				</thead>
 				<tbody>
 				<c:forEach var="cartItem" items="${order.cart.cartItem}">
 					<tr>
-					<td class="col-md-9"><em>${cartItem.product.productName}</em></td>
-					<td class="col-md-1" style="text-align: center">${cartItem.quality}</td>
-					<td class="col-md-1" style="text-align: center">${cartItem.product.productPrice}</td>
-					<td class="col-md-1" style="text-align: center">${cartItem.price}</td>
+					<td style="text-align: center"><em>${cartItem.product.productName}</em></td>
+					<td style="text-align: center">${cartItem.quality}</td>
+					<td style="text-align: center">${cartItem.product.productPrice}</td>
+					<td style="text-align: center">${cartItem.price}</td>
 					</tr>
 				</c:forEach>
-					<tr>
-					<td></td>
-					<td></td>
-					<td class="text-right">
-					<h4><strong>Grand Total:</strong></h4>
-					</td>
-					<td class="text-center text-danger">
-					<h4><strong>$ ${order.cart.totalPrice}</strong></h4>
-					</td>
-					</tr>
-
 				</tbody>
 			</table>
+			</div>
+					<div>
+					<h4><strong>Grand Total: </strong> <strong class="text-danger">$ ${order.cart.totalPrice}</strong></h4>
+					</div>
+					
 		</div>
 
-
+				
 						<input type="hidden" name="_flowExecutionKey" /> <br /> <br />
-
-						<button class="btn btn-default"
+					
+						<button style="float: left;" class="btn btn-lg btn-default"
 							name="_eventId_backToCollectShippingDetail">Back</button>
-
-						<input type="submit" value="Submit Order" class="btn btn-default"
+						
+						<input style="margin-left: 200px" type="submit" value="Submit Order" class="btn btn-lg btn-info"
 							name="_eventId_orderConfirmed" />
-
-						<button class="btn btn-default" name="_eventId_cancel">Cancel</button>
+						
+						<button style="float: right;" class="btn btn-lg btn-default" name="_eventId_cancel">Cancel</button>
 					</div>
 				</form:form>
 			</div>
 		</div>
 	</div>
-</div>
 		
 	</body>
 </html>

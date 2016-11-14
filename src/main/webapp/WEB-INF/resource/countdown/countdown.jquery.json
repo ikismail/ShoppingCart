@@ -1,0 +1,27 @@
+{
+    "name": "countdown",
+    "version": "1.0.0.0",
+    "title": "jQuery CountDown Clock",
+    "description": "Simple countdown plugin for product special offers",
+    "keywords": [
+        "countdown",
+        "timezone",
+        "offset"
+    ],
+    "author": {
+        "name": "Ekrem KAYA",
+        "url": "https://e-piksel.com"
+    },
+    "licenses": [
+        {
+            "type": "GNU GPL v2",
+            "url": "https://github.com/e-piksel/countdown/blob/master/LICENSE"
+        }
+    ],
+    "homepage": "https://github.com/e-piksel/countdown",
+    "docs": "https://github.com/e-piksel/countdown",
+    "demo": "http://e-piksel.github.io/countdown/demo",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
