@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/page/navbar.jsp"%>
 <%@ page isELIgnored="false"%>
 <div class="container-wrapper">
-	<div class="container">
+	<div class="container" style="margin-bottom: 180px;">
 		<section>
 			<div class="jumbotron">
 				<div class="container">
@@ -13,8 +13,8 @@
 
 		<section class="container">
 			<p>
-				<a href="<spring:url value="/getAllProducts" />"
-					class="btn btn-default">Browse Products</a>
+				<center><a href="<spring:url value="/getAllProducts" />"
+					class="btn btn-default">Browse Products</a></center>
 			</p>
 		</section>
 	</div>

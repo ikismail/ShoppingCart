@@ -25,7 +25,7 @@
 						<div class="col-sm-12">
 							<div class="row">
 							
-							<div>Shipping Address:</div>
+							<div><center>Shipping Address</center></div>
 							<div class="form-group">
 								<label for="address">Address</label>
 								<form:textarea type="text" 
@@ -58,9 +58,9 @@
 							<input type="hidden" name="_flowExecutionKey" />
 
 							<div class="form-actions">
-								<button class="btn btn-lg btn-default"	name="_eventId_backToCollectCustomerInfo">Back</button>
+								<button style="float: left; margin-left: 0px" class="btn btn-lg btn-default"	name="_eventId_backToCollectCustomerInfo">Back</button>
 								<button type="Submit" style="margin-right: 10px; margin-left: 0px" class="btn btn-lg btn-info" name="_eventId_shippingDetailCollected">Next</button>
-								<button class="btn btn-lg btn-default" name="_eventId_cancel">Cancel</button>
+								<button style="float: right;" class="btn btn-lg btn-default" name="_eventId_cancel">Cancel</button>
 							</div>
 						</div>
 						</div>
