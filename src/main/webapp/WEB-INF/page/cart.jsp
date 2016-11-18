@@ -8,8 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cart</title>
-<link rel="icon" type="image/x-icon" href="<c:url value="/resource/images/favicon1.png"/>" />
+<title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -24,7 +23,7 @@
 	<%@ include file="navbar.jsp"%>
 
 	<div class="container"
-		style="width: 1145px; margin-top: 20px; margin-bottom: 180px;">
+		style="width: 1145px; margin-top: 20px;">
 		<div ng-app="myapp" ng-controller="myController"
 			style="margin-bottom: 30px">
 			<div ng-init="getCart(${cartId})">
@@ -71,7 +70,7 @@
 				Shopping</a>
 		</div>
 	</div>
-	
+	  <%@ include file="productGrid.jsp"%>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

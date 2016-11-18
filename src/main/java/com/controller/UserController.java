@@ -31,7 +31,7 @@ public class UserController {
 		this.customerService = customerService;
 	}
 
-	@RequestMapping(value = "/customer/registration")
+	@RequestMapping(value="/customer/registration")
 	public ModelAndView getRegistrationForm() {
 		Customer customer = new Customer();
 		User user = new User();

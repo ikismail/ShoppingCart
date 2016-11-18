@@ -9,9 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register Here</title>
-<link rel="icon" type="image/x-icon"
-	href="<c:url value="/resource/images/favicon1.png"/>" />
+<title>Insert title here</title>
 <link rel="stylesheet"
 	href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
@@ -33,9 +31,7 @@
 					enctype="multipart/form-data">
 					<div class="col-sm-12">
 						<div class="row">
-							<div>
-								<center>User Details</center>
-							</div>
+							<div><center>User Details</center></div>
 							<div class="col-sm-6 form-group">
 								<form:label path="firstName">First Name</form:label>
 								<form:input type="text" placeholder="Enter First Name.."
@@ -62,10 +58,7 @@
 								<form:errors path="customerPhone"></form:errors>
 							</div>
 						</div>
-						<hr>
-						<div>
-							<center>Shipping Address</center>
-						</div>
+						<div><center>Shipping Address</center></div>
 						<div class="form-group">
 							<form:label path="shippingAddress.address">Address</form:label>
 							<form:textarea type="text" placeholder="Enter Shipping Address.."
@@ -97,10 +90,7 @@
 								<form:errors path="shippingAddress.zipcode"></form:errors>
 							</div>
 						</div>
-						<hr>
-						<div>
-							<center>Billing Address</center>
-						</div>
+						<div><center>Billing Address</center></div>
 						<div class="form-group">
 							<form:label path="billingAddress.address">Address</form:label>
 							<form:textarea type="text" placeholder="Enter Billing Address.."
@@ -143,7 +133,6 @@
 									placeholder="********" class="form-control" id="confirmpass" />
 							</div>
 						</div>
-
 						<div class="form-actions">
 							<button type="submit" class="btn btn-lg btn-info"
 								onclick="return Validate()">Submit</button>

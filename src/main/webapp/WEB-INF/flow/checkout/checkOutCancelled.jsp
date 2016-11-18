@@ -2,10 +2,10 @@
 <%@ include file="/WEB-INF/page/navbar.jsp"%>
 <%@ page isELIgnored="false"%>
 <div class="container-wrapper">
-	<div class="container" style="margin-bottom: 180px;">
+	<div class="container">
 		<section>
 			<div class="jumbotron">
-				<div class="container" >
+				<div class="container">
 					<h1 class="alert alert-danger">Checkout cancelled!</h1>
 
 					<p>Your checkout process is cancelled! You may continue
@@ -16,7 +16,7 @@
 
 		<section class="container">
 			<p>
-				<center><a href="<c:url value="/getAllProducts" />" class="btn btn-default">Go to Products page</a></center>
+				<a href="<c:url value="/getAllProducts" />" class="btn btn-default">Products</a>
 			</p>
 		</section>
 	</div>

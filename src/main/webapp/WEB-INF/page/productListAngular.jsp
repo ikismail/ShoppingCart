@@ -10,23 +10,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Products</title>
-<link rel="icon" type="image/x-icon"
-	href="<c:url value="/resource/images/favicon1.png"/>" />
+
 <link rel="stylesheet"
 	href="<c:url value="/resource/bootstrap/css/bootstrap.min.css"/>">
 <script src="<c:url value="/resource/js/jquery.js"/>"></script>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.min.js"/>"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resource/css/productList.css"/>">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="<c:url value="/resource/js/productController.js"/>"></script>
 </head>
 <body ng-app="myapp">
-	<div>
+	<div >
 		<div ng-controller="myController" ng-init="getProductList()">
-			<div class="container" id="productTable"
-				style="width: 1145px; margin-bottom: 180px;">
+			<div class="container" id="productTable" style="width: 1145px;margin-bottom: 180px;">
 				<h2>Product Management</h2>
 				<p>The List of Products in our Database</p>
 				Search: <input type="text" ng-model="searchCondition"
@@ -66,13 +63,16 @@
 							<td>{{b.productManufacturer}}</td>
 							<td><a href="getProductById/{{b.productId}}"
 								class="btn btn-info" role="button"> <span
-									class="glyphicon glyphicon-info-sign"></span></a> <!-- 						view only for user 
+									class="glyphicon glyphicon-info-sign"></span></a> 
+			
+			<!-- 						view only for user 
 								<security:authorize ifAnyGranted="ROLE_USER">
 									<a href="#" ng-click="addToCart(${b.productId})" class="btn btn-primary"
 										style="margin-left: 5px"> <span
 										class="glyphicon glyphicon-shopping-cart"></span></a>
-								</security:authorize> --> <!-- 						view only to the admin -->
-								<security:authorize ifAnyGranted="ROLE_ADMIN">
+								</security:authorize> -->
+			 <!-- 						view only to the admin --> <security:authorize
+									ifAnyGranted="ROLE_ADMIN">
 									<a href="admin/product/editProduct/{{b.productId}}"
 										class="btn btn-success" style="margin-left: 5px"> <span
 										class="glyphicon glyphicon-edit"></span></a>

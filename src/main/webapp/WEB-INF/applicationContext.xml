@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/security 
        http://www.springframework.org/schema/security/spring-security.xsd
        http://www.springframework.org/schema/webflow-config 
-        http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
 
 	<!-- database properties DataSource -->
 	<bean id="dataSource"
@@ -51,7 +51,6 @@
 				<value>com.model.CustomerOrder</value>
 				<value>com.model.ShippingAddress</value>
 				<value>com.model.User</value>
-				<value>com.model.Queries</value>
 			</list>
 		</property>
 
