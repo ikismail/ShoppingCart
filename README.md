@@ -1,86 +1,105 @@
 # ShoppingCart
-E-Commerce Website Using Spring MVC in Maven Is staeted and it is in Under Construction
+ Developed an end to end **Ecommerce web Application using Spring MVC** with multiple
+modules
 
-* Here I have developed an E-commerce website Using Spring MVC Framework in Maven
+### Functionalities:
 
-* In this project I have done modules like :
+1. User Registeration
 
-1. User Register
+2. **CRUD Operations** like
+  * User can add product to his cart
+  * Admin can add product to the product list
+  * Admin can edit the product details
+  * Admin can delete the product from the list
 
-2. CRUD Operations like
-  1. User can add product to his cart
-  2. Admin can add product to the product list
-  3. Admin can edit the product details
-  4. Admin can delete the product from the list
+3. **Spring Security**
+  * User can login the site
+  * The entire site will change according the role. Whether the client is User or Admin
+  * user can logout after completing. 
 
-3. Spring Security
-  1. User can login the site
-  2. The entire site will change according the role. Whether the client is User or Admin
-  3. user can logout after completing. 
-
-4. Spring WebFlow
-  1. after adding products the cart the User can checkout using spring WebFlow
-  2. Confirming User Details
-  3. Confirming Shipping and Billing Address
-  4. Receipt
-  5. If the user cancel the webflow it will go to cancel Page
-  6. If the user submits the checkout it will go to thank you page with the timing of delivery Report
+4. **Spring WebFlow**
+  * after adding products the cart the User can checkout using spring WebFlow
+  * Confirming User Details
+  * Confirming Shipping and Billing Address
+  * Receipt
+  * If the user cancel the webflow it will go to cancel Page
+  * If the user submits the checkout it will go to thank you page with the timing of delivery Report
   
-Home Page:
+### Tools and Technologies:
+  * **Technology** : Bootstrap, Java, Spring MVC, Hibernate, JSP, Maven.
+  * **Application Servicer**: Apache Tomcat Server
+  * **Database** : H2 Database.
+  
+  
+### ScreenShots:  
+  
+* Home Page:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
 
 
 
-Registration From:
+* Registration From:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/registrationForm.jpg)
 
 
 
-Login Form:
+* Login Form:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/LoginForm.jpg)
 
 
 
-Admin Login: 
+* Admin Login: 
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLogin.jpg)
 
 
 
-Admin Adding Product: 
+* Admin Adding Product: 
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLoginAddProduct.jpg)
 
 
 
-Admin Product List :
+* Admin Product List :
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLogin.jpg)
-Admin can Add Product 
-Admin can Edit Product
-Admin can Remove Product
 
+* Admin can Add Product 
+* Admin can Edit Product
+* Admin can Remove Product
 
+* Admin User Management:
 
-Admin User Management:
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLoginUserManagement.jpg)
 
 
 
-Adding Product to the Cart:
+* Adding Product to the Cart:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/cartList.jpg)
 
 
-Contact Us: 
+* Contact Us: 
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ContactUs.png)
 
 
 * WebFlow:
-Confirm User Details and Biling Address:
+#### Confirm User Details and Biling Address:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ConfirmCustomerDetails.png)
 
-Confirm Shipping :
+* Confirm Shipping :
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ConfirmShippingAddress.png)
 
-Receipt:
+* Receipt:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Receipt.png)
 
-Thank You Page:
+* Thank You Page:
+
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ThankYou.png)
