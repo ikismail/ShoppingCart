@@ -37,69 +37,6 @@ modules
 
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
 
-
-
-* Registration From:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/registrationForm.jpg)
-
-
-
-* Login Form:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/LoginForm.jpg)
-
-
-
-* Admin Login: 
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLogin.jpg)
-
-
-
-* Admin Adding Product: 
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLoginAddProduct.jpg)
-
-
-
-* Admin Product List :
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLogin.jpg)
-
-* Admin can Add Product 
-* Admin can Edit Product
-* Admin can Remove Product
-
-* Admin User Management:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/AdminLoginUserManagement.jpg)
-
-
-
-* Adding Product to the Cart:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/cartList.jpg)
-
-
 * Contact Us: 
 
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ContactUs.png)
-
-
-* WebFlow:
-#### Confirm User Details and Biling Address:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ConfirmCustomerDetails.png)
-
-* Confirm Shipping :
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ConfirmShippingAddress.png)
-
-* Receipt:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Receipt.png)
-
-* Thank You Page:
-
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ThankYou.png)
