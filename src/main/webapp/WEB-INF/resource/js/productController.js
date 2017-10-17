@@ -1,23 +1,25 @@
 var app = angular.module("myapp", []).controller(
 		"myController",
 		function($scope, $http) {
+
+			var BASE_PATH = "http://localhost:8080";
+
 			$scope.getProductList = function() {
-				$http.get("http://localhost:8090/pages/getProductsList")
+				$http.get(BASE_PATH + "/getProductsList")
 						.success(function(data) {
 							$scope.products = data;
 						});
 			}
 
 			$scope.addToCart = function(productId) {
-				$http.put("http://localhost:8090/pages/cart/add/" + productId)
+				$http.put(BASE_PATH + "/cart/add/" + productId)
 						.success(function() {
 							alert("Added Successfully");
 						})
 			}
 
 			$scope.refreshCart = function() {
-				$http.get(
-						"http://localhost:8090/pages/cart/getCart/"
+				$http.get(BASE_PATH + "/cart/getCart/"
 								+ $scope.cartId).success(function(data) {
 
 					$scope.carts = data;
@@ -29,16 +31,14 @@ var app = angular.module("myapp", []).controller(
 				$scope.refreshCart(cartId);
 			}
 			$scope.removeFromCart = function(cartItemId) {
-				$http.put(
-						"http://localhost:8090/pages/cart/removeCartItem/"
+				$http.put(BASE_PATH +"/cart/removeCartItem/"
 								+ cartItemId).success(function() {
 					$scope.refreshCart();
 				});
 			}
 
 			$scope.clearCart = function() {
-				$http.put(
-						"http://localhost:8090/pages/cart/removeAllItems/"
+				$http.put(BASE_PATH + "/cart/removeAllItems/"
 								+ $scope.cartId).success(function() {
 					$scope.refreshCart();
 				});
