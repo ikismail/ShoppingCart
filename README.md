@@ -1,4 +1,4 @@
-# ShoppingCart
+# ShoppingCart [![HitCount](http://hits.dwyl.io/ikismail/ShoppingCart.svg)](http://hits.dwyl.io/ikismail/ShoppingCart)
  Developed an end to end **Ecommerce web Application using Spring MVC** with multiple
 modules
 
