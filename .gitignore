@@ -20,4 +20,10 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-/target/
+target/
+
+# IDE configurations
+*.iml
+.settings/
+.idea/
+
