@@ -72,6 +72,8 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/index1/**"
 			access="permitAll" />
+		<security:intercept-url pattern="/login"
+			access="permitAll" />
 		<security:intercept-url pattern="/cart/**"
 			access="permitAll" />
 		<security:intercept-url pattern="/get*/**"
@@ -79,25 +81,31 @@
 		<security:intercept-url pattern="/admin*/**"
 			access="hasRole('ROLE_ADMIN')" />
 		<security:form-login login-page="/login"
-			authentication-failure-url="/login?error" default-target-url="/index1" />
-		<security:logout logout-success-url="/login?logout" />
+			login-processing-url="/j_spring_security_check"
+			username-parameter="j_username"
+			password-parameter="j_password"
+			authentication-failure-url="/login?error"
+			default-target-url="/index1" />
+		<security:logout logout-url="/logout" delete-cookies="JSESSIONID" logout-success-url="/login?logout" />
+		<security:csrf disabled="true"/>
 	</security:http>
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<!-- <security:user-service> -->
-			<!-- <security:user name="ismail@gmail.com" password="12345" -->
-			<!-- authorities="ROLE_USER" /> -->
-			<!-- <security:user name="ajmal@gmail.com" password="54321" -->
-			<!-- authorities="ROLE_ADMIN" /> -->
-			<!-- </security:user-service> -->
+			 <!-- <security:user-service>
+			<security:user name="ismail@gmail.com" password="12345"
+			authorities="ROLE_USER" />
+			<security:user name="ajmal@gmail.com" password="54321"
+			authorities="ROLE_ADMIN" />
+			</security:user-service> -->
 
-			<security:jdbc-user-service
+			 <security:jdbc-user-service
 				data-source-ref="dataSource"
 				authorities-by-username-query="SELECT 
 				emailId,authorities FROM authorities WHERE emailId =?"
 				users-by-username-query="SELECT 
 				emailId, password, enabled FROM users WHERE emailId=? " />
+				
 		</security:authentication-provider>
 
 	</security:authentication-manager>

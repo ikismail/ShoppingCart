@@ -76,7 +76,7 @@
 							<div id="button">
 								<button type="submit" class="btn btn-sm btn-success"
 									style="margin-right: 79px; margin-left: 60px">Login</button>
-								<a href="<c:url value="/register"/>"
+								<a href="<c:url value="/customer/registration"/>"
 									class="btn btn-sm btn-success">Register</a>
 							</div>
 						</fieldset>

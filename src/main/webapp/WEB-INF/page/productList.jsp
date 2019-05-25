@@ -39,10 +39,10 @@
 					<th>Stock Unit</th>
 					<th>Description</th>
 					<th>Manufacturer</th>
-					<th>View <security:authorize ifAnyGranted="ROLE_USER">
+					<th>View <security:authorize access="hasAnyRole('ROLE_USER')">
 					/ Add to Cart
 					</security:authorize> <!-- 					views only to the admin --> <security:authorize
-							ifAnyGranted="ROLE_ADMIN">
+							 access="hasAnyRole('ROLE_ADMIN')">
 					/Edit/Delete
 					</security:authorize>
 					</th>
@@ -66,12 +66,12 @@
 							role="button"> <span class="glyphicon glyphicon-info-sign"></span></a>
 
 							<!-- 						view only for user --> <security:authorize
-								ifAnyGranted="ROLE_USER">
+								 access="hasAnyRole('ROLE_USER')">
 								<a href="#" ng-click="addToCart(${prod.productId})"
 									class="btn btn-primary" style="margin-left: 5px"> <span
 									class="glyphicon glyphicon-shopping-cart"></span></a>
 							</security:authorize> <!-- 						view only to the admin --> <security:authorize
-								ifAnyGranted="ROLE_ADMIN">
+								access="hasAnyRole('ROLE_ADMIN')">
 								<a href="admin/product/editProduct/${prod.productId}"
 									class="btn btn-success" style="margin-left: 5px"> <span
 									class="glyphicon glyphicon-edit"></span></a>

@@ -65,7 +65,7 @@
 						<li><a href="<c:url value="/cart/getCartById" />"><span
 								class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 					</security:authorize>
-					<li><a href="<c:url value="/j_spring_security_logout" />"><span
+					<li><a href="<c:url value="/logout" />"><span
 							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 				</c:if>
 			</ul>
