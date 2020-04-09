@@ -81,6 +81,15 @@ modules
 
 10. Run the server.
 
+#### Somethings wrong!!
+
+If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker, 
+or take it as a task and 🧑‍💻 resolve it 💪 --> create a PullRequest 🛠.
+
+#### Contribution
+
+Contributors are most welcome.
+
 ### ScreenShots:
 
 * Home Page:
@@ -91,10 +100,3 @@ modules
 
 ![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ContactUs.png)
 
-#### Somethings wrong!!
-
-If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker
-
-#### Contribution
-
-Contributors are most welcome.
