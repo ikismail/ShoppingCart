@@ -8,11 +8,11 @@ modules
 
 ### Functionalities:
 
-1. User Registeration
+1. User Registeration Cell
 
 2. **CRUD Operations** like
 
-* User can add product to his cart
+* User can add product to his cart and purchase summary
 * Admin can add product to the product list
 * Admin can edit the product details
 * Admin can delete the product from the list
