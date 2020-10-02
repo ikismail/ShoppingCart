@@ -21,11 +21,11 @@ modules
 
 * User can login into the site.
 * The entire site will change according to the role, depending on whether the client is User or Admin.
-* user can logout after completing.
+* User can logout after completing.
 
 4. **Spring WebFlow**
 
-* after adding products the cart the User can checkout using spring WebFlow.
+* After adding products the cart the User can checkout using spring WebFlow.
 * Confirming User Details.
 * Confirming Shipping and Billing Address.
 * Receipt.
@@ -36,7 +36,7 @@ modules
 
 * **Technology** : Bootstrap, Java, Spring MVC, Hibernate, JSP, Maven.
 * **Application Servicer**: Apache Tomcat Server.
-* **Database** : H2 Database.
+* **Database** : H2 Database (In memory database)
 
 ### Installation:
 
