@@ -63,7 +63,7 @@ modules
 
 8. Run your H2 Database.
 
-9. Configure your databse configuration in **application-context.xml**.
+9. Configure your database configuration in **application-context.xml**.
 
    * Database properties:
 
