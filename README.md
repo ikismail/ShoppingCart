@@ -3,6 +3,7 @@
 
 We developed an end to end **Ecommerce web Application using Spring MVC** with multiple
 modules
+## BUILT BY REES AND HARSH
 
 ## Project is not maintained anymore [here #56](https://github.com/ikismail/ShoppingCart/issues/56#issue-606454548)
 
