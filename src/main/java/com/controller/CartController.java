@@ -39,7 +39,7 @@ public class CartController {
 		this.cartService = cartService;
 	}
 	
-	@RequestMapping("cart/getCartById")
+	@GetMapping("cart/getCartById")
 	public String getCartId(Model model){
 		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String emailId = user.getUsername();
@@ -48,8 +48,8 @@ public class CartController {
 		return "cart";
 	}
 	
-	@RequestMapping("/cart/getCart/{cartId}")
-	public @ResponseBody Cart getCartItems(@PathVariable(value="cartId")String cartId){
+	@GetMapping("/cart/getCart/{cartId}")
+	public @ResponseBody Cart getCartItems(@PathVariable("cartId") String cartId){
 		return cartService.getCartByCartId(cartId);
 	}
 	
